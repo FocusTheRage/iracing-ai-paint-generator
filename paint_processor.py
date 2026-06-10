@@ -19,6 +19,31 @@ logger = logging.getLogger(__name__)
 
 OUTPUT_DIR = Path(__file__).parent / "output"
 
+
+def session_dir_slug(car: IRacingCar) -> str:
+    """Filesystem-safe slug for a car's nested iRacing paint folder path."""
+    return car.folder_path.replace("\\", "_").replace("/", "_")
+
+
+def get_session_output_dir(car: IRacingCar, customer_id: str) -> Path:
+    """Directory where this app stores generated TGAs for a car + customer ID."""
+    cid = str(customer_id).strip()
+    return OUTPUT_DIR / f"{cid}_{session_dir_slug(car)}"
+
+
+def get_session_paint_paths(
+    car: IRacingCar,
+    customer_id: str,
+) -> tuple[Path, Path] | None:
+    """Return paint + spec paths from the latest session output, if present."""
+    session_dir = get_session_output_dir(car, customer_id)
+    paint_name, spec_name = get_output_filenames(customer_id)
+    paint_path = session_dir / paint_name
+    if not paint_path.exists():
+        return None
+    spec_path = session_dir / spec_name
+    return paint_path, spec_path if spec_path.exists() else None
+
 # UV panel regions as fractions of 2048 canvas (x0, y0, x1, y1) per car class.
 # Used to sample livery colors and map onto a side-view silhouette.
 UV_PANELS: dict[str, dict[str, tuple[float, float, float, float]]] = {
@@ -859,7 +884,7 @@ def export_paint_files(
 ) -> dict[str, Path]:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     paint_name, spec_name = get_output_filenames(customer_id)
-    session_dir = OUTPUT_DIR / f"{customer_id}_{car.folder_path.replace(chr(92), '_')}"
+    session_dir = get_session_output_dir(car, customer_id)
     session_dir.mkdir(parents=True, exist_ok=True)
 
     paint_path = session_dir / paint_name
@@ -875,16 +900,15 @@ def export_paint_files(
     result = {"paint": paint_path, "spec": spec_path, "session_dir": session_dir}
 
     if install_to_iracing:
-        from cars_config import get_paint_install_path
+        from iracing_preview import install_paint_for_preview
 
-        install_dir = get_paint_install_path(car, customer_id)
-        install_dir.mkdir(parents=True, exist_ok=True)
-        install_paint = install_dir / paint_name
-        install_spec = install_dir / spec_name
-        save_tga(paint.convert("RGBA"), install_paint)
-        save_tga(spec.convert("RGBA"), install_spec)
-        result["install_paint"] = install_paint
-        result["install_spec"] = install_spec
+        install_dirs = install_paint_for_preview(
+            car, customer_id, paint_path, spec_path
+        )
+        primary_dir = install_dirs[0]
+        result["install_paint"] = primary_dir / paint_name
+        result["install_spec"] = primary_dir / spec_name
+        result["install_dirs"] = install_dirs
 
     return result
 

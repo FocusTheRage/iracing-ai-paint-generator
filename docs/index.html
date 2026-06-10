@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iRacing AI Paint Generator</title>
-  <meta name="description" content="Generate iRacing paint TGAs from text prompts using official UV templates and AI backends." />
+  <meta name="description" content="Generate iRacing paint TGAs from text prompts using official UV templates, one-click install, and iRacing 3D preview." />
   <style>
     :root {
       --bg: #0f1117;
@@ -26,7 +26,8 @@
     .wrap { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
     header { margin-bottom: 2rem; }
     h1 { font-size: 2.2rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
-    .tagline { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
+    h2 { margin: 2rem 0 0.75rem; font-size: 1.35rem; }
+    .tagline { color: var(--muted); font-size: 1.1rem; max-width: 680px; }
     .badges { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .badge {
       background: var(--card);
@@ -43,7 +44,7 @@
       border-radius: 12px;
       padding: 1.25rem;
     }
-    .card h2 { margin: 0 0 0.5rem; font-size: 1.05rem; color: var(--accent2); }
+    .card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; color: var(--accent2); }
     .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
     pre {
       background: #0b0d12;
@@ -75,6 +76,21 @@
       font-weight: 600;
     }
     .cta-secondary:hover { border-color: var(--accent); text-decoration: none; }
+    ol, ul { color: var(--muted); padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+    }
+    th { background: var(--card); color: var(--accent2); }
+    td { color: var(--muted); }
     footer { margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
   </style>
 </head>
@@ -84,13 +100,16 @@
       <h1>iRacing AI Paint Generator</h1>
       <p class="tagline">
         Turn text prompts (and optional reference photos) into ready-to-race iRacing paint files —
-        constrained to official UV templates so the design lands on the car, not in the void.
+        constrained to official UV templates, with one-click install into your paint folder and
+        preview in iRacing’s built-in 3D viewer.
       </p>
       <div class="badges">
         <span class="badge">183 cars</span>
         <span class="badge">Gradio UI</span>
         <span class="badge">xAI / OpenAI / Stability</span>
         <span class="badge">TGA + Spec export</span>
+        <span class="badge">Copy to iRacing</span>
+        <span class="badge">3D preview</span>
       </div>
       <div class="cta-row">
         <a class="cta" href="https://github.com/FocusTheRage/iracing-ai-paint-generator/archive/refs/heads/main.zip">Download ZIP</a>
@@ -101,16 +120,28 @@
 
     <div class="grid">
       <div class="card">
-        <h2>UV-aware generation</h2>
+        <h3>UV-aware generation</h3>
         <p>Downloads official iRacing PSD templates, extracts paintable masks and wireframes, and guides AI output to valid paint islands.</p>
       </div>
       <div class="card">
-        <h2>Regional paint control</h2>
+        <h3>Regional paint control</h3>
         <p>Prompt for specific panels — hood, doors, rear quarter, and more — on cars with regional atlas data.</p>
       </div>
       <div class="card">
-        <h2>Install-ready output</h2>
-        <p>Exports <code>car_&lt;ID&gt;.tga</code> and optional <code>car_spec_&lt;ID&gt;.tga</code>, with optional copy into your iRacing paint folder.</p>
+        <h3>Install-ready output</h3>
+        <p>Exports <code>car_&lt;ID&gt;.tga</code> and <code>car_spec_&lt;ID&gt;.tga</code>. Auto-install on generate or copy anytime with one button.</p>
+      </div>
+      <div class="card">
+        <h3>Dual-folder install</h3>
+        <p>Windows iRacing installs may use nested paths (<code>stockcars2\arcaford25</code>) or legacy flat folders (<code>stockcars2 arcaford25</code>). The app writes to both.</p>
+      </div>
+      <div class="card">
+        <h3>iRacing 3D preview</h3>
+        <p>Installs your paint and launches the iRacing UI — open Paint Shop or Car Model to spin the real in-sim 3D viewer.</p>
+      </div>
+      <div class="card">
+        <h3>Demo mode</h3>
+        <p>Works without API keys using a procedural fallback livery so you can try the full pipeline locally.</p>
       </div>
     </div>
 
@@ -129,6 +160,34 @@ python -m pip install -r requirements.txt
 copy .env.example .env
 python app.py</code></pre>
     <p>Open <a href="http://127.0.0.1:7860">http://127.0.0.1:7860</a> after launching. Add <code>XAI_API_KEY</code> to <code>.env</code> for cloud generation, or use demo mode without keys.</p>
+
+    <h2>Using the app</h2>
+    <ol>
+      <li>Select your car and enter your iRacing <strong>Customer ID</strong> (used for filenames only).</li>
+      <li>Describe the livery and click <strong>Generate Paint</strong>.</li>
+      <li>Download the TGAs, enable <strong>Auto-install to iRacing folder</strong>, or click <strong>Copy to iRacing Folder</strong>.</li>
+      <li>Optional: <strong>Preview in iRacing 3D Viewer</strong> installs the paint and opens the iRacing UI.</li>
+    </ol>
+
+    <h2>Copy to iRacing</h2>
+    <p>Paints are written under <code>%USERPROFILE%\Documents\iRacing\paint\</code>. The status panel shows every folder copied to, with checkmarks on each file. Stale <code>.mip</code> cache files are removed automatically; restart iRacing if an old design still appears.</p>
+    <table>
+      <thead>
+        <tr><th>Control</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Auto-install to iRacing folder</td><td>Copies TGAs immediately after generate</td></tr>
+        <tr><td>Copy to iRacing Folder</td><td>Copies the last generated paint for that car + Customer ID</td></tr>
+        <tr><td>Preview in iRacing 3D Viewer</td><td>Installs paints and launches iRacing UI</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Windows launchers</h2>
+    <ul>
+      <li><code>run.bat</code> / <code>run.ps1</code> — start the app and open the browser</li>
+      <li><code>Launch.vbs</code> — detached launcher with a reminder popup</li>
+      <li><code>stop.bat</code> — stop servers on ports 7860–7869</li>
+    </ul>
 
     <footer>
       Not affiliated with iRacing.com. MIT licensed.

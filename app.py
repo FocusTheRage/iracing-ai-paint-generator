@@ -15,7 +15,6 @@ from __future__ import annotations
 import logging
 import os
 import re
-import shutil
 from pathlib import Path
 
 import gradio as gr
@@ -29,18 +28,23 @@ from cars_config import (
     IRacingCar,
     build_install_instructions,
     build_trading_paints_instructions,
+    get_output_filenames,
     get_paint_install_path,
+    get_paint_install_paths,
 )
 from paint_processor import (
+    OUTPUT_DIR,
     clip_paint_to_mask,
     create_template_preview,
     export_paint_files,
     fill_unpainted_mask_areas,
     generate_spec_map,
+    get_session_output_dir,
     post_process_paint,
     strip_template_artifacts,
     strip_guide_overlays,
 )
+from iracing_preview import install_paint_for_preview, open_iracing_3d_preview
 from regional_paint import apply_regional_overrides
 from template_manager import get_car_template
 
@@ -69,8 +73,12 @@ def validate_customer_id(customer_id: str) -> tuple[bool, str]:
 
 
 def _empty_result(error_msg: str) -> tuple:
-    """Return a 5-tuple matching all Gradio output components."""
-    return None, None, None, f"**Error:** {error_msg}", ""
+    """Return outputs matching all Gradio output components."""
+    return None, None, None, f"**Error:** {error_msg}", "", None
+
+
+def _last_gen_record(car_name: str, customer_id: str) -> dict[str, str]:
+    return {"car_name": car_name, "customer_id": str(customer_id).strip()}
 
 
 def generate_paint(
@@ -176,10 +184,28 @@ def generate_paint(
                 status_lines.append("\n" + override_note)
         if gen.reference_analysis:
             status_lines.append("\n**Reference analysis:**\n" + gen.reference_analysis[:800])
-        if install_to_iracing and "install_paint" in paths:
-            status_lines.append(
-                f"\n**Installed to:** `{paths['install_paint'].parent}`"
-            )
+        if install_to_iracing:
+            paint_name, spec_name = get_output_filenames(customer_id)
+            verified_dirs = []
+            for install_dir in get_paint_install_paths(car, customer_id):
+                installed_paint = install_dir / paint_name
+                if installed_paint.exists():
+                    verified_dirs.append(install_dir)
+            if verified_dirs:
+                status_lines.append("\n**Installed to iRacing:**")
+                for install_dir in verified_dirs:
+                    status_lines.append(f"- `{install_dir}`")
+            elif "install_paint" in paths:
+                status_lines.append(
+                    f"\n**Installed to iRacing:** `{paths['install_paint'].parent}`"
+                )
+            else:
+                primary = get_paint_install_path(car, customer_id)
+                status_lines.append(
+                    f"\n**Warning:** Auto-install was enabled but files were not "
+                    f"found under `{primary}`. Use **Copy to iRacing Folder** or "
+                    f"check folder permissions."
+                )
 
         instructions = (
             build_install_instructions(car, customer_id)
@@ -188,13 +214,15 @@ def generate_paint(
         )
 
         progress(1.0, desc="Done!")
+        paint_file = str(paths["paint"])
         spec_file = str(paths["spec"]) if generate_spec else None
         return (
             template_preview,
-            str(paths["paint"]),
+            paint_file,
             spec_file,
             "\n".join(status_lines),
             instructions,
+            _last_gen_record(car_name, customer_id),
         )
     except Exception as exc:
         logger.exception("Paint generation failed")
@@ -204,25 +232,54 @@ def generate_paint(
 def copy_to_iracing(
     car_name: str,
     customer_id: str,
-    paint_file: str | None,
-    spec_file: str | None,
+    last_generated: dict[str, str] | None,
 ) -> str:
-    """Copy already-generated TGAs into the iRacing paint directory."""
+    """Copy the latest generated TGAs into the iRacing paint directory."""
+    if last_generated and last_generated.get("car_name"):
+        car_name = last_generated["car_name"]
+        customer_id = last_generated.get("customer_id") or customer_id
+
     ok, cid_or_err = validate_customer_id(customer_id)
     if not ok:
-        return f"Error: {cid_or_err}"
-    if not paint_file:
-        return "Error: Generate a paint first."
+        return f"**Error:** {cid_or_err}"
+
+    if car_name not in CAR_BY_NAME:
+        return f"**Error:** Unknown car `{car_name}` — generate a paint first."
 
     car = CAR_BY_NAME[car_name]
-    dest_dir = get_paint_install_path(car, customer_id)
-    dest_dir.mkdir(parents=True, exist_ok=True)
+    session_dir = get_session_output_dir(car, cid_or_err)
+    try:
+        dest_dirs = install_paint_for_preview(car, cid_or_err)
+    except FileNotFoundError as exc:
+        return (
+            f"**Error:** {exc}\n\n"
+            f"Session output folder: `{session_dir}`"
+        )
+    except OSError as exc:
+        return f"**Error:** {exc}"
 
-    shutil.copy2(paint_file, dest_dir / Path(paint_file).name)
-    if spec_file and Path(spec_file).exists():
-        shutil.copy2(spec_file, dest_dir / Path(spec_file).name)
-
-    return f"Copied to `{dest_dir}`"
+    paint_name, spec_name = get_output_filenames(cid_or_err)
+    lines = [
+        "**Copied to iRacing paint folder**",
+        f"- Car: **{car.display_name}** (Customer ID **{cid_or_err}**)",
+        f"- Source: `{session_dir}`",
+        "",
+        "**Destinations:**",
+    ]
+    for dest_dir in dest_dirs:
+        paint_dest = dest_dir / paint_name
+        spec_dest = dest_dir / spec_name
+        lines.append(f"- `{dest_dir}`")
+        lines.append(
+            f"  - `{paint_dest}`"
+            + (" ✓" if paint_dest.exists() else " (missing)")
+        )
+        if spec_dest.exists():
+            lines.append(f"  - `{spec_dest}` ✓")
+    lines.append(
+        "\nIf iRacing still shows the old paint, restart the sim — .mip cache was cleared."
+    )
+    return "\n".join(lines)
 
 
 # ---------------------------------------------------------------------------
@@ -247,9 +304,7 @@ Outputs `car_<CustomerID>.tga` and `car_spec_<CustomerID>.tga` for direct use in
         """
     )
 
-    # State for file paths between generate / copy steps.
-    paint_path_state = gr.State(value=None)
-    spec_path_state = gr.State(value=None)
+    last_generated_state = gr.State(value=None)
 
     with gr.Row(equal_height=False):
         # ---- Sidebar inputs ----
@@ -356,7 +411,14 @@ Without API keys, **Demo Mode** generates a procedural livery.
                 download_paint = gr.File(label="Download car_<ID>.tga", interactive=False)
                 download_spec = gr.File(label="Download car_spec_<ID>.tga", interactive=False)
 
-            copy_btn = gr.Button("Copy to iRacing Folder", variant="secondary")
+            with gr.Row():
+                preview_iracing_btn = gr.Button(
+                    "Preview in iRacing 3D Viewer",
+                    variant="primary",
+                )
+                copy_btn = gr.Button("Copy to iRacing Folder", variant="secondary")
+
+            preview_iracing_status = gr.Markdown()
             copy_status = gr.Markdown()
 
             with gr.Accordion("Install & Trading Paints Instructions", open=True):
@@ -382,17 +444,32 @@ Without API keys, **Demo Mode** generates a procedural livery.
             download_spec,
             status_output,
             instructions_output,
+            last_generated_state,
         ],
-    ).then(
-        fn=lambda p, s: (p, s),
-        inputs=[download_paint, download_spec],
-        outputs=[paint_path_state, spec_path_state],
     )
 
     copy_btn.click(
         fn=copy_to_iracing,
-        inputs=[car_dropdown, customer_id_input, paint_path_state, spec_path_state],
+        inputs=[car_dropdown, customer_id_input, last_generated_state],
         outputs=[copy_status],
+    )
+
+    def _preview_in_iracing(car_name, customer_id, last_generated):
+        if last_generated and last_generated.get("car_name"):
+            car_name = last_generated["car_name"]
+            customer_id = last_generated.get("customer_id") or customer_id
+        ok, cid_or_err = validate_customer_id(customer_id)
+        if not ok:
+            return f"**Error:** {cid_or_err}"
+        if car_name not in CAR_BY_NAME:
+            return "**Error:** Generate a paint first."
+        car = CAR_BY_NAME[car_name]
+        return open_iracing_3d_preview(car, cid_or_err)
+
+    preview_iracing_btn.click(
+        fn=_preview_in_iracing,
+        inputs=[car_dropdown, customer_id_input, last_generated_state],
+        outputs=[preview_iracing_status],
     )
 
     gr.Markdown(
@@ -404,7 +481,6 @@ For best results, download the official UV template from
 and refine the AI output in Photoshop/GIMP before racing.*
         """
     )
-
 
 def _cleanup_stale_ports(ports: range = range(7860, 7870)) -> None:
     """Stop leftover python.exe servers blocking the default Gradio port range."""
@@ -488,6 +564,7 @@ def _launch_demo(host: str) -> None:
         share=os.getenv("GRADIO_SHARE", "").lower() in ("1", "true", "yes"),
         show_error=True,
         inbrowser=os.getenv("GRADIO_INBROWSER", "false").lower() in ("1", "true", "yes"),
+        allowed_paths=[str(OUTPUT_DIR.resolve())],
         theme=gr.themes.Base(
             primary_hue="red",
             secondary_hue="gray",

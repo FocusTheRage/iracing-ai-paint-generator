@@ -13,7 +13,9 @@ Generate ready-to-use iRacing paint files (`car_<ID>.tga` and optional `car_spec
 - **Regional overrides** — prompt keywords like `hood`, `doors`, `rear quarter` target specific panels (where atlas data exists)
 - **Reference photo analysis** — optional vision pass extracts colors and style cues from a reference image
 - **Spec map export** — optional PBR spec TGA (metallic / roughness / clearcoat)
-- **One-click install** — copy TGAs into `Documents\iRacing\paint\<car_folder>\`
+- **One-click install** — auto-copy or manual **Copy to iRacing Folder** into `Documents\iRacing\paint\`
+- **Dual-folder install (Windows)** — writes to both nested (`stockcars2\arcaford25`) and legacy flat (`stockcars2 arcaford25`) paths so paints show up regardless of how your iRacing install is laid out
+- **iRacing 3D preview** — installs paint files and launches the iRacing UI viewer for an in-sim-quality preview
 - **Demo mode** — procedural fallback when no API key is configured
 
 ## Requirements
@@ -34,6 +36,10 @@ python app.py
 ```
 
 Open **http://127.0.0.1:7860** in your browser.
+
+1. Pick a car, enter your **Customer ID**, and describe the livery.
+2. Click **Generate Paint** — download TGAs or use **Copy to iRacing Folder**.
+3. Optional: enable **Auto-install to iRacing folder** on generate, or **Preview in iRacing 3D Viewer** after export.
 
 ### Windows launchers
 
@@ -78,9 +84,10 @@ python scripts/scrape_trading_paints_catalog.py
 iracing-ai-paint-generator/
 ├── app.py                 # Gradio web UI
 ├── ai_backend.py          # Cloud AI + demo generation
-├── paint_processor.py     # TGA export, spec maps, install
+├── iracing_preview.py     # Install paints + launch iRacing 3D viewer
+├── paint_processor.py     # TGA export, spec maps, session output
 ├── template_manager.py    # iRacing PSD download & cache
-├── cars_config.py         # Car list (from catalog)
+├── cars_config.py         # Car list + iRacing paint install paths
 ├── data/                  # iracing_car_catalog.json
 ├── templates/
 │   ├── wireframes/        # Per-car UV wireframe PNGs + manifest
@@ -100,13 +107,23 @@ iracing-ai-paint-generator/
 
 ## iRacing install paths
 
-Paints install to:
+Paints install under:
 
 ```
-%USERPROFILE%\Documents\iRacing\paint\<car_folder_path>\
+%USERPROFILE%\Documents\iRacing\paint\
 ```
 
-The app shows exact filenames and paths after each generation.
+Official iRacing paths use nested folders (e.g. `stockcars2\arcaford25`). Many Windows installs also keep a **legacy flat folder** with spaces (e.g. `stockcars2 arcaford25`). The app copies to **both** layouts and clears `.mip` cache files so iRacing reloads fresh TGAs.
+
+After **Generate Paint** or **Copy to iRacing Folder**, the status panel lists every destination folder written, with checkmarks on each file.
+
+| Control | What it does |
+|---------|----------------|
+| **Auto-install to iRacing folder** | Copies TGAs on generate |
+| **Copy to iRacing Folder** | Copies the last generated paint for that car + Customer ID |
+| **Preview in iRacing 3D Viewer** | Installs paints and opens iRacing UI — use Paint Shop / Car Model to view |
+
+If the sim still shows an old design, restart iRacing after copying.
 
 ## Development scripts
 
