@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iRacing AI Paint Generator</title>
+  <meta name="description" content="Generate iRacing paint TGAs from text prompts using official UV templates and AI backends." />
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #1a1d27;
+      --text: #e8eaed;
+      --muted: #9aa0a6;
+      --accent: #4f8cff;
+      --accent2: #00c2a8;
+      --border: #2a2f3a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a2744 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    header { margin-bottom: 2rem; }
+    h1 { font-size: 2.2rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+    .tagline { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
+    .badges { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .badge {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin: 2rem 0; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .card h2 { margin: 0 0 0.5rem; font-size: 1.05rem; color: var(--accent2); }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    pre {
+      background: #0b0d12;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+    code { color: #c5d4ff; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .cta-row { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), #3a6fd8);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .cta-secondary {
+      display: inline-block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .cta-secondary:hover { border-color: var(--accent); text-decoration: none; }
+    footer { margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>iRacing AI Paint Generator</h1>
+      <p class="tagline">
+        Turn text prompts (and optional reference photos) into ready-to-race iRacing paint files —
+        constrained to official UV templates so the design lands on the car, not in the void.
+      </p>
+      <div class="badges">
+        <span class="badge">183 cars</span>
+        <span class="badge">Gradio UI</span>
+        <span class="badge">xAI / OpenAI / Stability</span>
+        <span class="badge">TGA + Spec export</span>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="https://github.com/FocusTheRage/iracing-ai-paint-generator/archive/refs/heads/main.zip">Download ZIP</a>
+        <a class="cta-secondary" href="https://github.com/FocusTheRage/iracing-ai-paint-generator/releases/latest">Latest release</a>
+        <a class="cta-secondary" href="https://github.com/FocusTheRage/iracing-ai-paint-generator">View on GitHub</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h2>UV-aware generation</h2>
+        <p>Downloads official iRacing PSD templates, extracts paintable masks and wireframes, and guides AI output to valid paint islands.</p>
+      </div>
+      <div class="card">
+        <h2>Regional paint control</h2>
+        <p>Prompt for specific panels — hood, doors, rear quarter, and more — on cars with regional atlas data.</p>
+      </div>
+      <div class="card">
+        <h2>Install-ready output</h2>
+        <p>Exports <code>car_&lt;ID&gt;.tga</code> and optional <code>car_spec_&lt;ID&gt;.tga</code>, with optional copy into your iRacing paint folder.</p>
+      </div>
+    </div>
+
+    <h2>Download</h2>
+    <p>
+      This page is documentation only. Get the full project (source code, wireframes, scripts) as a ZIP:
+      <a href="https://github.com/FocusTheRage/iracing-ai-paint-generator/archive/refs/heads/main.zip">iracing-ai-paint-generator-main.zip</a>
+      — or use the green <strong>Code → Download ZIP</strong> button on the
+      <a href="https://github.com/FocusTheRage/iracing-ai-paint-generator">GitHub repo</a>.
+    </p>
+
+    <h2>Quick start</h2>
+    <pre><code>git clone https://github.com/FocusTheRage/iracing-ai-paint-generator.git
+cd iracing-ai-paint-generator
+python -m pip install -r requirements.txt
+copy .env.example .env
+python app.py</code></pre>
+    <p>Open <a href="http://127.0.0.1:7860">http://127.0.0.1:7860</a> after launching. Add <code>XAI_API_KEY</code> to <code>.env</code> for cloud generation, or use demo mode without keys.</p>
+
+    <footer>
+      Not affiliated with iRacing.com. MIT licensed.
+      <a href="https://github.com/FocusTheRage/iracing-ai-paint-generator/blob/main/README.md">Full documentation</a>
+    </footer>
+  </div>
+</body>
+</html>

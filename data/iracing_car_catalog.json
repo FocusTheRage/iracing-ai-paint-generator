@@ -1,0 +1,1471 @@
+{
+  "source": "https://www.tradingpaints.com/cartemplates",
+  "car_count": 183,
+  "unique_folders": 181,
+  "cars": [
+    {
+      "display_name": "ARCA Chevrolet SS",
+      "folder_path": "stockcars2\\arcachevy25",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "198_template_ACSS25.zip"
+    },
+    {
+      "display_name": "ARCA Ford Mustang",
+      "folder_path": "stockcars2\\arcaford25",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "199_template_ARCAFM.zip"
+    },
+    {
+      "display_name": "ARCA Toyota Camry",
+      "folder_path": "stockcars2\\arcatoyota25",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "200_template_ARCATC.zip"
+    },
+    {
+      "display_name": "Dirt 358 Modified",
+      "folder_path": "dirtmodified\\358",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "134_template_BBM.zip"
+    },
+    {
+      "display_name": "Dirt Big Block Modified",
+      "folder_path": "dirtmodified\\bigblock",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "134_template_BBM.zip"
+    },
+    {
+      "display_name": "Dirt Late Model - Limited",
+      "folder_path": "dirtlatemodel\\350",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "78_template_DLM350.zip"
+    },
+    {
+      "display_name": "Dirt Late Model - Pro",
+      "folder_path": "dirtlatemodel\\358",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "78_template_DLM350.zip"
+    },
+    {
+      "display_name": "Dirt Late Model - Super",
+      "folder_path": "dirtlatemodel\\438",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "78_template_DLM350.zip"
+    },
+    {
+      "display_name": "Dirt Legends Ford 34 Coupe",
+      "folder_path": "legends\\dirtford34c",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "5_template_LEG.zip"
+    },
+    {
+      "display_name": "Dirt Micro Sprint Car",
+      "folder_path": "dirtmicrosprint\\winged",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "180_template_MSCW.zip"
+    },
+    {
+      "display_name": "Dirt Micro Sprint Car - Non-Winged",
+      "folder_path": "dirtmicrosprint\\nonwinged",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "180_template_MSCW.zip"
+    },
+    {
+      "display_name": "Dirt Midget",
+      "folder_path": "dirtmidget",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "96_template_DM.zip"
+    },
+    {
+      "display_name": "Dirt Mini Stock",
+      "folder_path": "dirtministock",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "191_template_MNSTK.zip"
+    },
+    {
+      "display_name": "Dirt Outlaw Micro Sprint Car",
+      "folder_path": "dirtmicrosprint\\winged outlaw",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "180_template_MSCW.zip"
+    },
+    {
+      "display_name": "Dirt Outlaw Micro Sprint Car - Non-Winged",
+      "folder_path": "dirtmicrosprint\\nonwinged outlaw",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "180_template_MSCW.zip"
+    },
+    {
+      "display_name": "Dirt Sprint Car - 305",
+      "folder_path": "dirtsprint\\winged 305",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "80_template_DSC305.zip"
+    },
+    {
+      "display_name": "Dirt Sprint Car - 360",
+      "folder_path": "dirtsprint\\winged 360",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "80_template_DSC305.zip"
+    },
+    {
+      "display_name": "Dirt Sprint Car - 360 Non-Winged",
+      "folder_path": "dirtsprint\\nonwinged 360",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "80_template_DSC305.zip"
+    },
+    {
+      "display_name": "Dirt Sprint Car - 410",
+      "folder_path": "dirtsprint\\winged 410",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "80_template_DSC305.zip"
+    },
+    {
+      "display_name": "Dirt Sprint Car - 410 Non-Winged",
+      "folder_path": "dirtsprint\\nonwinged 410",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "80_template_DSC305.zip"
+    },
+    {
+      "display_name": "Dirt Street Stock",
+      "folder_path": "dirtstreetstock",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "79_template_DSS.zip"
+    },
+    {
+      "display_name": "Dirt UMP Modified",
+      "folder_path": "dirtumpmod",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "95_template_UMP.zip"
+    },
+    {
+      "display_name": "Gen 4 Chevrolet Monte Carlo - 2003",
+      "folder_path": "stockcars\\chevymontecarlo03",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "201_template_G4CMC.zip"
+    },
+    {
+      "display_name": "Gen 4 Chevrolet Monte Carlo - 2003 SS",
+      "folder_path": "stockcars\\chevymontecarlo03",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "201_template_G4CMC.zip"
+    },
+    {
+      "display_name": "Gen 4 Ford Taurus - 2003",
+      "folder_path": "stockcars\\fordtaurus03",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "202_template_G4FT.zip"
+    },
+    {
+      "display_name": "Gen 4 Ford Taurus - 2003 SS",
+      "folder_path": "stockcars\\fordtaurus03",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "202_template_G4FT.zip"
+    },
+    {
+      "display_name": "Late Model Stock",
+      "folder_path": "latemodel2023",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "164_template_LM23.zip"
+    },
+    {
+      "display_name": "Legends Ford 34 Coupe",
+      "folder_path": "legends\\ford34c",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "5_template_LEG.zip"
+    },
+    {
+      "display_name": "Mini Stock",
+      "folder_path": "ministock",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "191_template_MNSTK.zip"
+    },
+    {
+      "display_name": "Modified - NASCAR Whelen Tour",
+      "folder_path": "skmodified\\tour",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "2_template_SK.zip"
+    },
+    {
+      "display_name": "Modified - SK",
+      "folder_path": "skmodified",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "2_template_SK.zip"
+    },
+    {
+      "display_name": "NASCAR Cup Series Chevrolet Camaro ZL1 [Gen 6]",
+      "folder_path": "stockcars\\camarozl12018",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "103_template_ZL1.zip"
+    },
+    {
+      "display_name": "NASCAR Cup Series Ford Mustang [Gen 6]",
+      "folder_path": "stockcars\\fordmustang2019",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "110_template_FM2019.zip"
+    },
+    {
+      "display_name": "NASCAR Cup Series Next Gen Chevrolet Camaro ZL1",
+      "folder_path": "stockcars\\chevycamarozl12022",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "139_template_NGC.zip"
+    },
+    {
+      "display_name": "NASCAR Cup Series Next Gen Ford Mustang",
+      "folder_path": "stockcars\\fordmustang2022",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "140_template_NGF.zip"
+    },
+    {
+      "display_name": "NASCAR Cup Series Next Gen Toyota Camry",
+      "folder_path": "stockcars\\toyotacamry2022",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "141_template_NGT.zip"
+    },
+    {
+      "display_name": "NASCAR Cup Series Toyota Camry [Gen 6]",
+      "folder_path": "stockcars\\toyotacamry",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "56_template_TC.zip"
+    },
+    {
+      "display_name": "NASCAR Legends Buick LeSabre - 1987",
+      "folder_path": "stockcars\\buicklesabre87",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "154_template_B87.zip"
+    },
+    {
+      "display_name": "NASCAR Legends Chevrolet Monte Carlo - 1987",
+      "folder_path": "stockcars\\chevymontecarlo87",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "124_template_C87.zip"
+    },
+    {
+      "display_name": "NASCAR Legends Ford Thunderbird - 1987",
+      "folder_path": "stockcars\\fordthunderbird87",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "125_template_F87.zip"
+    },
+    {
+      "display_name": "NASCAR Legends Pontiac Grand Prix - 1987",
+      "folder_path": "stockcars\\pontiacgrandprix87",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "175_template_P87.zip"
+    },
+    {
+      "display_name": "NASCAR O\u2019Reilly Chevrolet Camaro",
+      "folder_path": "stockcars2\\camaro2019",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "114_template_NCC.zip"
+    },
+    {
+      "display_name": "NASCAR O\u2019Reilly Ford Mustang",
+      "folder_path": "stockcars2\\mustang2019",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "115_template_NFM.zip"
+    },
+    {
+      "display_name": "NASCAR O\u2019Reilly Toyota Supra",
+      "folder_path": "stockcars2\\supra2019",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "116_template_NTS.zip"
+    },
+    {
+      "display_name": "NASCAR Truck Chevrolet Silverado",
+      "folder_path": "trucks\\silverado2019",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "111_template_CS2019.zip"
+    },
+    {
+      "display_name": "NASCAR Truck Ford F150",
+      "folder_path": "trucks\\fordf150",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "123_template_F150.zip"
+    },
+    {
+      "display_name": "NASCAR Truck RAM",
+      "folder_path": "trucks\\ram2026",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "211_template_RAM26.zip"
+    },
+    {
+      "display_name": "NASCAR Truck Toyota Tundra TRD Pro",
+      "folder_path": "trucks\\toyotatundra2022",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "155_template_TTP.zip"
+    },
+    {
+      "display_name": "SRX",
+      "folder_path": "srx",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "179_template_SRX.zip"
+    },
+    {
+      "display_name": "Silver Crown",
+      "folder_path": "silvercrown",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "18_template_SC.zip"
+    },
+    {
+      "display_name": "Sprint Car",
+      "folder_path": "sprint",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "37_template_SPRT.zip"
+    },
+    {
+      "display_name": "Street Stock - Casino M2",
+      "folder_path": "streetstock\\streetstock2",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "186_template_SSC.zip"
+    },
+    {
+      "display_name": "Street Stock - Eagle T3",
+      "folder_path": "streetstock\\streetstock3",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "187_template_SSE.zip"
+    },
+    {
+      "display_name": "Street Stock - Panther C1",
+      "folder_path": "streetstock",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "36_template_SS.zip"
+    },
+    {
+      "display_name": "Super Late Model",
+      "folder_path": "superlatemodel",
+      "category": "Oval",
+      "template_hint": "dirt",
+      "zip_name": "54_template_SLM.zip"
+    },
+    {
+      "display_name": "[Legacy] ARCA Menards Chevrolet Impala",
+      "folder_path": "stockcars2\\chevy",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "24_template_NW09.zip"
+    },
+    {
+      "display_name": "[Legacy] Gen 4 Cup",
+      "folder_path": "stockcars2\\chevy gen4cup",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "24_template_NW09.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Cup Chevrolet Impala COT - 2009",
+      "folder_path": "stockcars\\impala",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "22_template_CUP.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Cup Chevrolet SS - 2013",
+      "folder_path": "stockcars\\chevyss",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "45_template_CSS.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Cup Ford Fusion - 2016",
+      "folder_path": "stockcars\\fordfusion",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "46_template_FF.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Nationwide Chevrolet Impala - 2012",
+      "folder_path": "stockcars2\\chevy cot",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "38_template_IMPB.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Truck Chevrolet Silverado - 2008",
+      "folder_path": "trucks\\silverado",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "20_template_TRUCK.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Xfinity Chevrolet Camaro - 2014",
+      "folder_path": "stockcars2\\nwcamaro2014",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "58_template_CCB.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Xfinity Ford Mustang - 2016",
+      "folder_path": "stockcars2\\nwford2013",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "51_template_FM.zip"
+    },
+    {
+      "display_name": "[Legacy] NASCAR Xfinity Toyota Camry - 2015",
+      "folder_path": "stockcars2\\camry2015",
+      "category": "Oval",
+      "template_hint": "nascar",
+      "zip_name": "69_template_NXTC.zip"
+    },
+    {
+      "display_name": "Acura ARX-06 GTP",
+      "folder_path": "acuraarx06gtp",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "170_template_AGTP.zip"
+    },
+    {
+      "display_name": "Acura NSX GT3 EVO 22",
+      "folder_path": "acuransxevo22gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "194_template_NSXE22.zip"
+    },
+    {
+      "display_name": "Aston Martin DBR9 GT1",
+      "folder_path": "astonmartin\\dbr9",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "64_template_AM1.zip"
+    },
+    {
+      "display_name": "Aston Martin Vantage GT3 EVO",
+      "folder_path": "amvantageevogt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "206_template_AMGT3.zip"
+    },
+    {
+      "display_name": "Aston Martin Vantage GT4",
+      "folder_path": "amvantagegt4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "150_template_AMV4.zip"
+    },
+    {
+      "display_name": "Audi 90 GTO",
+      "folder_path": "audi90gto",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "76_template_A90.zip"
+    },
+    {
+      "display_name": "Audi R18",
+      "folder_path": "audir18",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "98_template_R18.zip"
+    },
+    {
+      "display_name": "Audi R8 LMS EVO II GT3",
+      "folder_path": "audir8lmsevo2gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "176_template_AEVO2.zip"
+    },
+    {
+      "display_name": "Audi RS 3 LMS TCR",
+      "folder_path": "audirs3lms",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "112_template_RS3.zip"
+    },
+    {
+      "display_name": "Audi RS3 LMS Gen 2 TCR",
+      "folder_path": "audirs3lmsgen2",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "210_template_ARS3G2.zip"
+    },
+    {
+      "display_name": "BMW M Hybrid V8 Evo",
+      "folder_path": "bmwlmdh",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "159_template_BMWGTP.zip"
+    },
+    {
+      "display_name": "BMW M2 CS Racing (F87) - 2020",
+      "folder_path": "bmwm2csr",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "195_template_BMWM2.zip"
+    },
+    {
+      "display_name": "BMW M2 Racing (G87)",
+      "folder_path": "bmwm2g87",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "216_template_BMWM2R.zip"
+    },
+    {
+      "display_name": "BMW M4 F82 GT4 - 2018",
+      "folder_path": "bmwm4gt4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "122_template_BMWM4.zip"
+    },
+    {
+      "display_name": "BMW M4 G82 GT4 Evo",
+      "folder_path": "bmwm4evogt4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "189_template_BMWGT4.zip"
+    },
+    {
+      "display_name": "BMW M4 GT3 EVO",
+      "folder_path": "bmwm4gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "132_template_M4GT3.zip"
+    },
+    {
+      "display_name": "BMW M8 GTE",
+      "folder_path": "bmwm8gte",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "109_template_BMWM8.zip"
+    },
+    {
+      "display_name": "Cadillac CTS-V Racecar",
+      "folder_path": "cadillacctsvr",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "41_template_CTSVR.zip"
+    },
+    {
+      "display_name": "Cadillac V-Series.R GTP",
+      "folder_path": "cadillacvseriesrgtp",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "168_template_CGTP.zip"
+    },
+    {
+      "display_name": "Chevrolet Corvette C6.R GT1",
+      "folder_path": "c6r",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "26_template_C6R.zip"
+    },
+    {
+      "display_name": "Chevrolet Corvette C7 DP",
+      "folder_path": "c7vettedp",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "70_template_C7DP.zip"
+    },
+    {
+      "display_name": "Chevrolet Corvette C8.R GTE",
+      "folder_path": "c8rvettegte",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "127_template_C8R.zip"
+    },
+    {
+      "display_name": "Chevrolet Corvette Z06 GT3.R",
+      "folder_path": "chevyvettez06rgt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "184_template_CZ06.zip"
+    },
+    {
+      "display_name": "Dallara F3",
+      "folder_path": "dallaraf3",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "106_template_F317.zip"
+    },
+    {
+      "display_name": "Dallara IL-15",
+      "folder_path": "dallarail15",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "205_template_DIL15.zip"
+    },
+    {
+      "display_name": "Dallara IR18",
+      "folder_path": "dallarair18",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "99_template_IR18.zip"
+    },
+    {
+      "display_name": "Dallara P217",
+      "folder_path": "dallarap217",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "128_template_P217.zip"
+    },
+    {
+      "display_name": "Dallara iR-01",
+      "folder_path": "dallarair01",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "129_template_IR01.zip"
+    },
+    {
+      "display_name": "EURO NASCAR RC01",
+      "folder_path": "euronascar",
+      "category": "Road",
+      "template_hint": "nascar",
+      "zip_name": "213_template_ENRC01.zip"
+    },
+    {
+      "display_name": "FIA Cross Car",
+      "folder_path": "crosscartn11",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "207_template_FIAACC.zip"
+    },
+    {
+      "display_name": "FIA F4",
+      "folder_path": "formulair04",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "148_template_F4.zip"
+    },
+    {
+      "display_name": "Ferrari 296 Challenge",
+      "folder_path": "ferrari296challenge",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "203_template_F296C.zip"
+    },
+    {
+      "display_name": "Ferrari 296 GT3",
+      "folder_path": "ferrari296gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "173_template_F296.zip"
+    },
+    {
+      "display_name": "Ferrari 488 GT3 Evo 2020",
+      "folder_path": "ferrarievogt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "144_template_FEVO.zip"
+    },
+    {
+      "display_name": "Ferrari 488 GTE",
+      "folder_path": "ferrari488gte",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "93_template_488E.zip"
+    },
+    {
+      "display_name": "Ferrari 499P",
+      "folder_path": "ferrari499p",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "196_template_F499P.zip"
+    },
+    {
+      "display_name": "Ford Fiesta RS WRC",
+      "folder_path": "fordfiestarswrc",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "81_template_FF-WSC.zip"
+    },
+    {
+      "display_name": "Ford GT GT2",
+      "folder_path": "fordgt",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "40_template_FGT.zip"
+    },
+    {
+      "display_name": "Ford GT GT3",
+      "folder_path": "fordgt\\gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "59_template_FGT3.zip"
+    },
+    {
+      "display_name": "Ford GTE",
+      "folder_path": "fordgt2017",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "92_template_FGT7.zip"
+    },
+    {
+      "display_name": "Ford Mustang FR500S",
+      "folder_path": "fr500s",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "30_template_FR500S.zip"
+    },
+    {
+      "display_name": "Ford Mustang GT3",
+      "folder_path": "fordmustanggt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "185_template_FMGT3.zip"
+    },
+    {
+      "display_name": "Ford Mustang GT4",
+      "folder_path": "fordmustanggt4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "204_template_FMGT4.zip"
+    },
+    {
+      "display_name": "Formula Renault 2.0",
+      "folder_path": "formularenault20",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "74_template_F20.zip"
+    },
+    {
+      "display_name": "Formula Renault 3.5",
+      "folder_path": "formularenault35",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "105_template_F35.zip"
+    },
+    {
+      "display_name": "Formula Vee - Classic",
+      "folder_path": "formulavee",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "142_template_FVEE.zip"
+    },
+    {
+      "display_name": "Formula Vee - Conqueror",
+      "folder_path": "formulavee\\formulavee3",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "215_template_FVEE3.zip"
+    },
+    {
+      "display_name": "Formula Vee - Cutlass",
+      "folder_path": "formulavee\\formulavee2",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "214_template_FVEE2.zip"
+    },
+    {
+      "display_name": "Global Mazda MX-5 Cup",
+      "folder_path": "mx5\\mx52016",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "67_template_MX16.zip"
+    },
+    {
+      "display_name": "HPD ARX-01c",
+      "folder_path": "hpdarx01c",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "39_template_ARX.zip"
+    },
+    {
+      "display_name": "Honda Civic Type R TCR",
+      "folder_path": "hondacivictyper",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "147_template_HCTR.zip"
+    },
+    {
+      "display_name": "Hyundai Elantra N TCR",
+      "folder_path": "hyundaielantracn7",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "146_template_HECN7.zip"
+    },
+    {
+      "display_name": "Hyundai Veloster N TCR",
+      "folder_path": "hyundaivelostern",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "153_template_HVTC.zip"
+    },
+    {
+      "display_name": "Indy Pro 2000 PM-18",
+      "folder_path": "indypropm18",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "120_template_PM18.zip"
+    },
+    {
+      "display_name": "Kia Optima",
+      "folder_path": "kiaoptima",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "44_template_KIA.zip"
+    },
+    {
+      "display_name": "Lamborghini Huracan GT3 EVO",
+      "folder_path": "lamborghinievogt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "133_template_LGT3.zip"
+    },
+    {
+      "display_name": "Ligier JS P320",
+      "folder_path": "ligierjsp320",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "165_template_LJSP.zip"
+    },
+    {
+      "display_name": "Lotus 49",
+      "folder_path": "lotus49",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "42_template_L49.zip"
+    },
+    {
+      "display_name": "Lotus 79",
+      "folder_path": "lotus79",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "25_template_L79.zip"
+    },
+    {
+      "display_name": "Lucas Oil Off Road Pro 2 Lite",
+      "folder_path": "protrucks\\pro2lite",
+      "category": "Road",
+      "template_hint": "nascar",
+      "zip_name": "104_template_PRO2.zip"
+    },
+    {
+      "display_name": "Lucas Oil Off Road Pro 2 Truck",
+      "folder_path": "protrucks\\pro2truck",
+      "category": "Road",
+      "template_hint": "nascar",
+      "zip_name": "104_template_PRO2.zip"
+    },
+    {
+      "display_name": "Lucas Oil Off Road Pro 4 Truck",
+      "folder_path": "protrucks\\pro4truck",
+      "category": "Road",
+      "template_hint": "nascar",
+      "zip_name": "107_template_PRO4.zip"
+    },
+    {
+      "display_name": "McLaren 570S GT4",
+      "folder_path": "mclaren570sgt4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "135_template_M570S.zip"
+    },
+    {
+      "display_name": "McLaren 720s GT3 EVO",
+      "folder_path": "mclaren720sgt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "188_template_720GT3.zip"
+    },
+    {
+      "display_name": "McLaren MP4-12C GT3",
+      "folder_path": "mclarenmp4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "43_template_MP4.zip"
+    },
+    {
+      "display_name": "McLaren MP4-30",
+      "folder_path": "mclarenmp430",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "71_template_MP430.zip"
+    },
+    {
+      "display_name": "Mercedes-AMG GT3 2020",
+      "folder_path": "mercedesamgevogt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "156_template_MGT3E.zip"
+    },
+    {
+      "display_name": "Mercedes-AMG GT4",
+      "folder_path": "mercedesamggt4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "157_template_MGT4.zip"
+    },
+    {
+      "display_name": "Nissan GTP ZX-T",
+      "folder_path": "nissangtpzxt",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "77_template_ZXT.zip"
+    },
+    {
+      "display_name": "Pontiac Solstice",
+      "folder_path": "solstice",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "3_template_SOL.zip"
+    },
+    {
+      "display_name": "Pontiac Solstice - Rookie",
+      "folder_path": "solstice\\rookie",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "3_template_SOL.zip"
+    },
+    {
+      "display_name": "Porsche 718 Cayman GT4 Clubsport MR",
+      "folder_path": "porsche718gt4",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "119_template_P718.zip"
+    },
+    {
+      "display_name": "Porsche 911 Cup (992.2)",
+      "folder_path": "porsche9922cup",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "208_template_P9922.zip"
+    },
+    {
+      "display_name": "Porsche 911 GT3 R (992)",
+      "folder_path": "porsche992rgt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "169_template_992R.zip"
+    },
+    {
+      "display_name": "Porsche 911 RSR",
+      "folder_path": "porsche991rsr",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "102_template_RSR.zip"
+    },
+    {
+      "display_name": "Porsche 919",
+      "folder_path": "porsche919",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "100_template_919.zip"
+    },
+    {
+      "display_name": "Porsche 963 GTP",
+      "folder_path": "porsche963gtp",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "174_template_PGTP.zip"
+    },
+    {
+      "display_name": "Porsche Mission R",
+      "folder_path": "porschemissionr",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "158_template_PMR.zip"
+    },
+    {
+      "display_name": "Radical SR10",
+      "folder_path": "radicalsr10",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "149_template_SR10.zip"
+    },
+    {
+      "display_name": "Radical SR8",
+      "folder_path": "radical\\sr8",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "13_template_SR8.zip"
+    },
+    {
+      "display_name": "Ray FF1600",
+      "folder_path": "raygr22",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "163_template_GR22.zip"
+    },
+    {
+      "display_name": "Renault Clio",
+      "folder_path": "renaultcliocup",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "162_template_RENC.zip"
+    },
+    {
+      "display_name": "Ruf RT 12R AWD",
+      "folder_path": "rufrt12r\\awd",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "50_template_R12T.zip"
+    },
+    {
+      "display_name": "Ruf RT 12R C-Spec",
+      "folder_path": "rufrt12r\\track cspec",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "50_template_R12T.zip"
+    },
+    {
+      "display_name": "Ruf RT 12R RWD",
+      "folder_path": "rufrt12r\\rwd",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "50_template_R12T.zip"
+    },
+    {
+      "display_name": "Ruf RT 12R Track",
+      "folder_path": "rufrt12r\\track",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "50_template_R12T.zip"
+    },
+    {
+      "display_name": "SCCA Spec Racer Ford",
+      "folder_path": "specracer",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "23_template_SRF.zip"
+    },
+    {
+      "display_name": "Skip Barber Formula 2000",
+      "folder_path": "rt2000",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "1_template_SBRS.zip"
+    },
+    {
+      "display_name": "Stock Car Brasil Chevrolet Cruze",
+      "folder_path": "stockcarbrasil\\cruze",
+      "category": "Road",
+      "template_hint": "nascar",
+      "zip_name": "151_template_SCCC.zip"
+    },
+    {
+      "display_name": "Stock Car Brasil Toyota Corolla",
+      "folder_path": "stockcarbrasil\\corolla",
+      "category": "Road",
+      "template_hint": "nascar",
+      "zip_name": "152_template_SCTC.zip"
+    },
+    {
+      "display_name": "Subaru WRX STI",
+      "folder_path": "subaruwrxsti",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "101_template_WRX.zip"
+    },
+    {
+      "display_name": "Super Formula Lights",
+      "folder_path": "superformulalights324",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "178_template_SFL324.zip"
+    },
+    {
+      "display_name": "Super Formula SF23 - Honda",
+      "folder_path": "superformulasf23\\honda",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "172_template_SF23H.zip"
+    },
+    {
+      "display_name": "Super Formula SF23 - Toyota",
+      "folder_path": "superformulasf23\\toyota",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "171_template_SF23T.zip"
+    },
+    {
+      "display_name": "Supercars Chevrolet Camaro Gen 3",
+      "folder_path": "supercars\\chevycamarogen3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "192_template_SCCG3.zip"
+    },
+    {
+      "display_name": "Supercars Ford Mustang Gen 3",
+      "folder_path": "supercars\\fordmustanggen3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "190_template_SFMG3.zip"
+    },
+    {
+      "display_name": "USF 2000",
+      "folder_path": "usf2000usf17",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "121_template_PM17.zip"
+    },
+    {
+      "display_name": "VW Beetle",
+      "folder_path": "vwbeetlegrc",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "91_template_VWB.zip"
+    },
+    {
+      "display_name": "VW Beetle - Lite",
+      "folder_path": "vwbeetlegrc\\lite",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "91_template_VWB.zip"
+    },
+    {
+      "display_name": "VW Jetta TDI Cup",
+      "folder_path": "jettatdi",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "27_template_VWTDI.zip"
+    },
+    {
+      "display_name": "[Legacy] Audi R8 LMS",
+      "folder_path": "audir8gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "73_template_AR8.zip"
+    },
+    {
+      "display_name": "[Legacy] BMW Z4 GT3",
+      "folder_path": "bmwz4gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "55_template_BMWZ.zip"
+    },
+    {
+      "display_name": "[Legacy] Dallara DW12",
+      "folder_path": "dallaradw12",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "57_template_DW12.zip"
+    },
+    {
+      "display_name": "[Legacy] Dallara IR-05",
+      "folder_path": "dallara",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "29_template_INDY.zip"
+    },
+    {
+      "display_name": "[Legacy] Ferrari 488 GT3",
+      "folder_path": "ferrari488gt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "94_template_488T3.zip"
+    },
+    {
+      "display_name": "[Legacy] Mazda MX-5 Cup - 2010",
+      "folder_path": "mx5\\cup",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "35_template_MX5.zip"
+    },
+    {
+      "display_name": "[Legacy] Mazda MX-5 Roadster - 2010",
+      "folder_path": "mx5\\roadster",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "35_template_MX5.zip"
+    },
+    {
+      "display_name": "[Legacy] Mercedes-AMG GT3",
+      "folder_path": "mercedesamggt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "72_template_MGT3.zip"
+    },
+    {
+      "display_name": "[Legacy] Porsche 911 GT3 Cup (991)",
+      "folder_path": "porsche911cup",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "88_template_P911.zip"
+    },
+    {
+      "display_name": "[Legacy] Porsche 911 GT3 Cup (992.1)",
+      "folder_path": "porsche992cup",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "143_template_P992.zip"
+    },
+    {
+      "display_name": "[Legacy] Porsche 911 GT3 R",
+      "folder_path": "porsche911rgt3",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "137_template_PGTR.zip"
+    },
+    {
+      "display_name": "[Legacy] Pro Mazda",
+      "folder_path": "formulamazda",
+      "category": "Road",
+      "template_hint": "openwheel",
+      "zip_name": "4_template_PM.zip"
+    },
+    {
+      "display_name": "[Legacy] Riley MkXX Daytona Prototype - 2008",
+      "folder_path": "rileydp",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "21_template_DP.zip"
+    },
+    {
+      "display_name": "[Legacy] Supercars Ford Mustang GT",
+      "folder_path": "v8supercars\\fordmustanggt",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "118_template_FMGT.zip"
+    },
+    {
+      "display_name": "[Legacy] Supercars Holden ZB Commodore",
+      "folder_path": "v8supercars\\holden2019",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "117_template_HZBC.zip"
+    },
+    {
+      "display_name": "[Legacy] V8 Supercar Ford FG Falcon - 2014",
+      "folder_path": "v8supercars\\ford2014",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "61_template_FFV8.zip"
+    },
+    {
+      "display_name": "[Legacy] V8 Supercar Ford Falcon - 2009",
+      "folder_path": "fordv8sc",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "28_template_V8SC.zip"
+    },
+    {
+      "display_name": "[Legacy] V8 Supercar Holden VF Commodore - 2014",
+      "folder_path": "v8supercars\\holden2014",
+      "category": "Road",
+      "template_hint": "gt",
+      "zip_name": "60_template_HCV8.zip"
+    }
+  ],
+  "zip_by_folder": {
+    "stockcars2\\arcachevy25": "198_template_ACSS25.zip",
+    "stockcars2\\arcaford25": "199_template_ARCAFM.zip",
+    "stockcars2\\arcatoyota25": "200_template_ARCATC.zip",
+    "dirtmodified\\358": "134_template_BBM.zip",
+    "dirtmodified\\bigblock": "134_template_BBM.zip",
+    "dirtlatemodel\\350": "78_template_DLM350.zip",
+    "dirtlatemodel\\358": "78_template_DLM350.zip",
+    "dirtlatemodel\\438": "78_template_DLM350.zip",
+    "legends\\dirtford34c": "5_template_LEG.zip",
+    "dirtmicrosprint\\winged": "180_template_MSCW.zip",
+    "dirtmicrosprint\\nonwinged": "180_template_MSCW.zip",
+    "dirtmidget": "96_template_DM.zip",
+    "dirtministock": "191_template_MNSTK.zip",
+    "dirtmicrosprint\\winged outlaw": "180_template_MSCW.zip",
+    "dirtmicrosprint\\nonwinged outlaw": "180_template_MSCW.zip",
+    "dirtsprint\\winged 305": "80_template_DSC305.zip",
+    "dirtsprint\\winged 360": "80_template_DSC305.zip",
+    "dirtsprint\\nonwinged 360": "80_template_DSC305.zip",
+    "dirtsprint\\winged 410": "80_template_DSC305.zip",
+    "dirtsprint\\nonwinged 410": "80_template_DSC305.zip",
+    "dirtstreetstock": "79_template_DSS.zip",
+    "dirtumpmod": "95_template_UMP.zip",
+    "stockcars\\chevymontecarlo03": "201_template_G4CMC.zip",
+    "stockcars\\fordtaurus03": "202_template_G4FT.zip",
+    "latemodel2023": "164_template_LM23.zip",
+    "legends\\ford34c": "5_template_LEG.zip",
+    "ministock": "191_template_MNSTK.zip",
+    "skmodified\\tour": "2_template_SK.zip",
+    "skmodified": "2_template_SK.zip",
+    "stockcars\\camarozl12018": "103_template_ZL1.zip",
+    "stockcars\\fordmustang2019": "110_template_FM2019.zip",
+    "stockcars\\chevycamarozl12022": "139_template_NGC.zip",
+    "stockcars\\fordmustang2022": "140_template_NGF.zip",
+    "stockcars\\toyotacamry2022": "141_template_NGT.zip",
+    "stockcars\\toyotacamry": "56_template_TC.zip",
+    "stockcars\\buicklesabre87": "154_template_B87.zip",
+    "stockcars\\chevymontecarlo87": "124_template_C87.zip",
+    "stockcars\\fordthunderbird87": "125_template_F87.zip",
+    "stockcars\\pontiacgrandprix87": "175_template_P87.zip",
+    "stockcars2\\camaro2019": "114_template_NCC.zip",
+    "stockcars2\\mustang2019": "115_template_NFM.zip",
+    "stockcars2\\supra2019": "116_template_NTS.zip",
+    "trucks\\silverado2019": "111_template_CS2019.zip",
+    "trucks\\fordf150": "123_template_F150.zip",
+    "trucks\\ram2026": "211_template_RAM26.zip",
+    "trucks\\toyotatundra2022": "155_template_TTP.zip",
+    "silvercrown": "18_template_SC.zip",
+    "sprint": "37_template_SPRT.zip",
+    "srx": "179_template_SRX.zip",
+    "streetstock\\streetstock2": "186_template_SSC.zip",
+    "streetstock\\streetstock3": "187_template_SSE.zip",
+    "streetstock": "36_template_SS.zip",
+    "superlatemodel": "54_template_SLM.zip",
+    "stockcars2\\chevy": "24_template_NW09.zip",
+    "stockcars2\\chevy gen4cup": "24_template_NW09.zip",
+    "stockcars\\impala": "22_template_CUP.zip",
+    "stockcars\\chevyss": "45_template_CSS.zip",
+    "stockcars\\fordfusion": "46_template_FF.zip",
+    "stockcars2\\chevy cot": "38_template_IMPB.zip",
+    "trucks\\silverado": "20_template_TRUCK.zip",
+    "stockcars2\\nwcamaro2014": "58_template_CCB.zip",
+    "stockcars2\\nwford2013": "51_template_FM.zip",
+    "stockcars2\\camry2015": "69_template_NXTC.zip",
+    "acuraarx06gtp": "170_template_AGTP.zip",
+    "acuransxevo22gt3": "194_template_NSXE22.zip",
+    "astonmartin\\dbr9": "64_template_AM1.zip",
+    "amvantageevogt3": "206_template_AMGT3.zip",
+    "amvantagegt4": "150_template_AMV4.zip",
+    "audi90gto": "76_template_A90.zip",
+    "audir18": "98_template_R18.zip",
+    "audir8lmsevo2gt3": "176_template_AEVO2.zip",
+    "audirs3lms": "112_template_RS3.zip",
+    "audirs3lmsgen2": "210_template_ARS3G2.zip",
+    "bmwlmdh": "159_template_BMWGTP.zip",
+    "bmwm2csr": "195_template_BMWM2.zip",
+    "bmwm2g87": "216_template_BMWM2R.zip",
+    "bmwm4gt4": "122_template_BMWM4.zip",
+    "bmwm4evogt4": "189_template_BMWGT4.zip",
+    "bmwm4gt3": "132_template_M4GT3.zip",
+    "bmwm8gte": "109_template_BMWM8.zip",
+    "cadillacctsvr": "41_template_CTSVR.zip",
+    "cadillacvseriesrgtp": "168_template_CGTP.zip",
+    "c6r": "26_template_C6R.zip",
+    "c7vettedp": "70_template_C7DP.zip",
+    "c8rvettegte": "127_template_C8R.zip",
+    "chevyvettez06rgt3": "184_template_CZ06.zip",
+    "dallaraf3": "106_template_F317.zip",
+    "dallarail15": "205_template_DIL15.zip",
+    "dallarair01": "129_template_IR01.zip",
+    "dallarair18": "99_template_IR18.zip",
+    "dallarap217": "128_template_P217.zip",
+    "euronascar": "213_template_ENRC01.zip",
+    "ferrari296challenge": "203_template_F296C.zip",
+    "ferrari296gt3": "173_template_F296.zip",
+    "ferrarievogt3": "144_template_FEVO.zip",
+    "ferrari488gte": "93_template_488E.zip",
+    "ferrari499p": "196_template_F499P.zip",
+    "crosscartn11": "207_template_FIAACC.zip",
+    "formulair04": "148_template_F4.zip",
+    "fordfiestarswrc": "81_template_FF-WSC.zip",
+    "fordgt": "40_template_FGT.zip",
+    "fordgt\\gt3": "59_template_FGT3.zip",
+    "fordgt2017": "92_template_FGT7.zip",
+    "fr500s": "30_template_FR500S.zip",
+    "fordmustanggt3": "185_template_FMGT3.zip",
+    "fordmustanggt4": "204_template_FMGT4.zip",
+    "formularenault20": "74_template_F20.zip",
+    "formularenault35": "105_template_F35.zip",
+    "formulavee": "142_template_FVEE.zip",
+    "formulavee\\formulavee3": "215_template_FVEE3.zip",
+    "formulavee\\formulavee2": "214_template_FVEE2.zip",
+    "mx5\\mx52016": "67_template_MX16.zip",
+    "hondacivictyper": "147_template_HCTR.zip",
+    "hpdarx01c": "39_template_ARX.zip",
+    "hyundaielantracn7": "146_template_HECN7.zip",
+    "hyundaivelostern": "153_template_HVTC.zip",
+    "indypropm18": "120_template_PM18.zip",
+    "kiaoptima": "44_template_KIA.zip",
+    "lamborghinievogt3": "133_template_LGT3.zip",
+    "ligierjsp320": "165_template_LJSP.zip",
+    "lotus49": "42_template_L49.zip",
+    "lotus79": "25_template_L79.zip",
+    "protrucks\\pro2lite": "104_template_PRO2.zip",
+    "protrucks\\pro2truck": "104_template_PRO2.zip",
+    "protrucks\\pro4truck": "107_template_PRO4.zip",
+    "mclaren570sgt4": "135_template_M570S.zip",
+    "mclaren720sgt3": "188_template_720GT3.zip",
+    "mclarenmp4": "43_template_MP4.zip",
+    "mclarenmp430": "71_template_MP430.zip",
+    "mercedesamgevogt3": "156_template_MGT3E.zip",
+    "mercedesamggt4": "157_template_MGT4.zip",
+    "nissangtpzxt": "77_template_ZXT.zip",
+    "solstice": "3_template_SOL.zip",
+    "solstice\\rookie": "3_template_SOL.zip",
+    "porsche718gt4": "119_template_P718.zip",
+    "porsche9922cup": "208_template_P9922.zip",
+    "porsche992rgt3": "169_template_992R.zip",
+    "porsche991rsr": "102_template_RSR.zip",
+    "porsche919": "100_template_919.zip",
+    "porsche963gtp": "174_template_PGTP.zip",
+    "porschemissionr": "158_template_PMR.zip",
+    "radicalsr10": "149_template_SR10.zip",
+    "radical\\sr8": "13_template_SR8.zip",
+    "raygr22": "163_template_GR22.zip",
+    "renaultcliocup": "162_template_RENC.zip",
+    "rufrt12r\\awd": "50_template_R12T.zip",
+    "rufrt12r\\track cspec": "50_template_R12T.zip",
+    "rufrt12r\\rwd": "50_template_R12T.zip",
+    "rufrt12r\\track": "50_template_R12T.zip",
+    "specracer": "23_template_SRF.zip",
+    "rt2000": "1_template_SBRS.zip",
+    "stockcarbrasil\\cruze": "151_template_SCCC.zip",
+    "stockcarbrasil\\corolla": "152_template_SCTC.zip",
+    "subaruwrxsti": "101_template_WRX.zip",
+    "superformulalights324": "178_template_SFL324.zip",
+    "superformulasf23\\honda": "172_template_SF23H.zip",
+    "superformulasf23\\toyota": "171_template_SF23T.zip",
+    "supercars\\chevycamarogen3": "192_template_SCCG3.zip",
+    "supercars\\fordmustanggen3": "190_template_SFMG3.zip",
+    "usf2000usf17": "121_template_PM17.zip",
+    "vwbeetlegrc": "91_template_VWB.zip",
+    "vwbeetlegrc\\lite": "91_template_VWB.zip",
+    "jettatdi": "27_template_VWTDI.zip",
+    "audir8gt3": "73_template_AR8.zip",
+    "bmwz4gt3": "55_template_BMWZ.zip",
+    "dallaradw12": "57_template_DW12.zip",
+    "dallara": "29_template_INDY.zip",
+    "ferrari488gt3": "94_template_488T3.zip",
+    "mx5\\cup": "35_template_MX5.zip",
+    "mx5\\roadster": "35_template_MX5.zip",
+    "mercedesamggt3": "72_template_MGT3.zip",
+    "porsche911cup": "88_template_P911.zip",
+    "porsche992cup": "143_template_P992.zip",
+    "porsche911rgt3": "137_template_PGTR.zip",
+    "formulamazda": "4_template_PM.zip",
+    "rileydp": "21_template_DP.zip",
+    "v8supercars\\fordmustanggt": "118_template_FMGT.zip",
+    "v8supercars\\holden2019": "117_template_HZBC.zip",
+    "fordv8sc": "28_template_V8SC.zip",
+    "v8supercars\\ford2014": "61_template_FFV8.zip",
+    "v8supercars\\holden2014": "60_template_HCV8.zip"
+  }
+}

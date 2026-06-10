@@ -1,0 +1,134 @@
+# iRacing AI Paint Generator
+
+Generate ready-to-use iRacing paint files (`car_<ID>.tga` and optional `car_spec_<ID>.tga`) from text prompts and reference photos. The app uses official iRacing UV templates, paintable masks, and wireframe guides so AI output maps correctly onto the car.
+
+**Live docs:** [focustherage.github.io/iracing-ai-paint-generator](https://focustherage.github.io/iracing-ai-paint-generator/)
+
+**Download:** [main.zip](https://github.com/FocusTheRage/iracing-ai-paint-generator/archive/refs/heads/main.zip) · [Releases](https://github.com/FocusTheRage/iracing-ai-paint-generator/releases)
+
+## Features
+
+- **183 iRacing cars** — catalog scraped from Trading Paints, with per-car UV wireframes
+- **Constrained generation** — paints only on paintable UV islands; wireframe artifacts are stripped automatically
+- **Regional overrides** — prompt keywords like `hood`, `doors`, `rear quarter` target specific panels (where atlas data exists)
+- **Reference photo analysis** — optional vision pass extracts colors and style cues from a reference image
+- **Spec map export** — optional PBR spec TGA (metallic / roughness / clearcoat)
+- **One-click install** — copy TGAs into `Documents\iRacing\paint\<car_folder>\`
+- **Demo mode** — procedural fallback when no API key is configured
+
+## Requirements
+
+- Windows 10/11 (primary target; Python stack is cross-platform)
+- Python 3.10+
+- An API key for at least one cloud backend (optional — demo mode works without keys)
+
+## Quick start
+
+```bash
+git clone https://github.com/FocusTheRage/iracing-ai-paint-generator.git
+cd iracing-ai-paint-generator
+python -m pip install -r requirements.txt
+copy .env.example .env
+# Edit .env and add your XAI_API_KEY (recommended)
+python app.py
+```
+
+Open **http://127.0.0.1:7860** in your browser.
+
+### Windows launchers
+
+| File | Purpose |
+|------|---------|
+| `run.bat` | Opens the app in a new console window and launches the browser |
+| `run.ps1` | PowerShell launcher (same behavior) |
+| `Launch.vbs` | Detached launcher with a popup reminder |
+| `stop.bat` | Stops processes listening on ports 7860–7869 |
+
+## API backends
+
+Set keys in `.env` (see `.env.example`):
+
+| Variable | Backend |
+|----------|---------|
+| `XAI_API_KEY` | xAI Grok Imagine + vision (recommended) |
+| `OPENAI_API_KEY` | OpenAI DALL-E 3 |
+| `STABILITY_API_KEY` | Stability AI SD3 |
+
+**Auto** mode tries backends in that order, then falls back to demo mode.
+
+## First-run template cache
+
+Wireframe PNGs ship with the repo. Per-car mask/guide caches are built on first use from iRacing’s official PSD templates (downloaded from iRacing CDN).
+
+To pre-build every car and refresh wireframes:
+
+```bash
+python scripts/bootstrap_all_cars.py
+```
+
+To refresh the car catalog from Trading Paints:
+
+```bash
+python scripts/scrape_trading_paints_catalog.py
+```
+
+## Project layout
+
+```
+iracing-ai-paint-generator/
+├── app.py                 # Gradio web UI
+├── ai_backend.py          # Cloud AI + demo generation
+├── paint_processor.py     # TGA export, spec maps, install
+├── template_manager.py    # iRacing PSD download & cache
+├── cars_config.py         # Car list (from catalog)
+├── data/                  # iracing_car_catalog.json
+├── templates/
+│   ├── wireframes/        # Per-car UV wireframe PNGs + manifest
+│   ├── atlas/             # Regional UV atlas JSON (select cars)
+│   └── cache/             # Generated masks/guides (gitignored)
+├── scripts/               # Bootstrap & maintenance tools
+└── output/                # Generated paints (gitignored)
+```
+
+## Environment variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `GRADIO_PORT` | `7860` | Web UI port |
+| `GRADIO_HOST` | `127.0.0.1` | Bind address |
+| `XAI_VISION_MODEL` | `grok-4.3` | Vision model for reference photos |
+
+## iRacing install paths
+
+Paints install to:
+
+```
+%USERPROFILE%\Documents\iRacing\paint\<car_folder_path>\
+```
+
+The app shows exact filenames and paths after each generation.
+
+## Development scripts
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/bootstrap_all_cars.py` | Cache all car templates + export wireframes |
+| `scripts/scrape_trading_paints_catalog.py` | Update `data/iracing_car_catalog.json` |
+| `scripts/import_atlas_from_png.py` | Import regional UV atlas from labeled PNG |
+| `scripts/setup_cup_camry_atlas.py` | Cup Camry atlas setup helper |
+| `scripts/publish_to_github.ps1` | Create repo, push, and enable GitHub Pages |
+
+## Publish to GitHub
+
+```powershell
+gh auth login
+powershell -ExecutionPolicy Bypass -File scripts/publish_to_github.ps1
+```
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+## Disclaimer
+
+This project is not affiliated with iRacing.com Motorsport Simulations. iRacing templates are downloaded from iRacing’s public member CDN for personal paint creation, consistent with iRacing’s paint system.

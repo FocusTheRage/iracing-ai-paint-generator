@@ -1,0 +1,42 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Generated at runtime (rebuilt via bootstrap / app use)
+output/*
+!output/.gitkeep
+templates/cache/*
+!templates/cache/.gitkeep
+
+# Temp / local tooling
+.tmp_pip/
+bootstrap_log.txt
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# Large one-off debug exports
+templates/arca_debug/
+templates/arca_local_analysis/
+templates/debug_*.png
+templates/car_414913*.png

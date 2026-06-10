@@ -1,0 +1,444 @@
+{
+  "car_name": "ARCA Ford Mustang",
+  "folder_path": "stockcars2\\arcaford25",
+  "resolution": 2048,
+  "version": 16,
+  "reference_png": "ARCA Ford Mustang.png",
+  "alias_groups": {
+    "rear": [
+      "back",
+      "rear_bumper",
+      "rear_diffuser",
+      "trunk",
+      "rear_corner_upper",
+      "rear_corner_lower",
+      "rear_quarter_behind_door"
+    ],
+    "back": [
+      "back"
+    ],
+    "front": [
+      "front_bumper",
+      "front_corner_upper_left",
+      "front_corner_upper_bumper_right",
+      "front_corner_upper_right",
+      "front_corner_lower_right"
+    ],
+    "hood": [
+      "hood"
+    ],
+    "roof": [
+      "roof"
+    ],
+    "trunk": [
+      "trunk"
+    ],
+    "driver_side": [
+      "left_side_door"
+    ],
+    "passenger_side": [
+      "right_side_door"
+    ],
+    "left_side": [
+      "left_side_door",
+      "rear_corner_upper",
+      "rear_corner_lower",
+      "rear_quarter_behind_door",
+      "trunk"
+    ],
+    "right_side": [
+      "right_side_door",
+      "hood",
+      "front_corner_upper_bumper_right",
+      "front_corner_upper_right",
+      "front_corner_lower_right",
+      "rear_quarter_behind_door",
+      "back",
+      "rear_bumper",
+      "rear_diffuser"
+    ],
+    "door": [
+      "left_side_door",
+      "right_side_door"
+    ],
+    "bumper": [
+      "front_bumper",
+      "front_corner_upper_left",
+      "front_corner_upper_bumper_right"
+    ],
+    "corner": [
+      "rear_corner_upper",
+      "rear_corner_lower",
+      "front_corner_upper_right",
+      "front_corner_lower_right"
+    ],
+    "fender": [
+      "rear_corner_upper",
+      "rear_corner_lower",
+      "front_corner_upper_right",
+      "front_corner_lower_right"
+    ],
+    "rear_bumper": [
+      "rear_bumper"
+    ],
+    "diffuser": [
+      "rear_diffuser"
+    ],
+    "rear_quarter": [
+      "rear_quarter_behind_door",
+      "rear_corner_upper",
+      "rear_corner_lower"
+    ],
+    "quarter": [
+      "rear_quarter_behind_door",
+      "rear_corner_upper",
+      "rear_corner_lower"
+    ],
+    "front_bumper_corner": [
+      "front_corner_upper_left",
+      "front_corner_upper_bumper_right"
+    ]
+  },
+  "regions": [
+    {
+      "id": "front_bumper",
+      "label": "FRONT BUMPER",
+      "display_name": "Front bumper",
+      "bbox": [
+        0.0576,
+        0.0298,
+        0.4756,
+        0.1099
+      ],
+      "aliases": [
+        "front bumper",
+        "front",
+        "nose",
+        "grille"
+      ],
+      "in_game_hint": "Top-center panel with Mustang grille/headlights on the UV sheet.",
+      "label_anchor": [
+        0.27,
+        0.07
+      ]
+    },
+    {
+      "id": "front_corner_upper_left",
+      "label": "FRONT BUMPER CORNER",
+      "display_name": "Front bumper corner (left)",
+      "aliases": [
+        "front bumper corner left",
+        "left bumper corner",
+        "front bumper left corner"
+      ],
+      "in_game_hint": "Left end cap of the front bumper row on the UV sheet.",
+      "bbox": [
+        0.0,
+        0.0298,
+        0.0576,
+        0.1099
+      ],
+      "label_anchor": [
+        0.029,
+        0.07
+      ]
+    },
+    {
+      "label": "FRONT BUMPER CORNER",
+      "display_name": "Front bumper corner (right)",
+      "aliases": [
+        "front bumper corner right",
+        "right bumper corner",
+        "front bumper right corner"
+      ],
+      "in_game_hint": "Right end cap of the front bumper row on the UV sheet.",
+      "id": "front_corner_upper_bumper_right",
+      "label_anchor": [
+        0.502,
+        0.07
+      ],
+      "bbox": [
+        0.4756,
+        0.0298,
+        0.5288,
+        0.1099
+      ]
+    },
+    {
+      "id": "back",
+      "label": "BACK",
+      "display_name": "Back / rear body",
+      "aliases": [
+        "back",
+        "rear body",
+        "rear clip"
+      ],
+      "in_game_hint": "Top-right panel \u2014 rear body section on the UV sheet.",
+      "bbox": [
+        0.5596,
+        0.0,
+        0.8696,
+        0.1396
+      ],
+      "label_anchor": [
+        0.6987,
+        0.0957
+      ]
+    },
+    {
+      "id": "rear_bumper",
+      "label": "REAR BUMPER",
+      "display_name": "Rear bumper",
+      "aliases": [
+        "rear bumper",
+        "back bumper"
+      ],
+      "in_game_hint": "Top-far-right panel \u2014 rear bumper cover.",
+      "bbox": [
+        0.5596,
+        0.0796,
+        0.8696,
+        0.2197
+      ],
+      "label_anchor": [
+        0.7026,
+        0.1519
+      ]
+    },
+    {
+      "id": "rear_diffuser",
+      "label": "REAR DIFFUSER",
+      "display_name": "Rear diffuser",
+      "aliases": [
+        "rear diffuser",
+        "diffuser"
+      ],
+      "in_game_hint": "Top-far-right lower panel \u2014 rear diffuser.",
+      "bbox": [
+        0.8599,
+        0.0,
+        1.0,
+        0.3198
+      ],
+      "label_anchor": [
+        0.9365,
+        0.1689
+      ]
+    },
+    {
+      "id": "left_side_door",
+      "label": "LEFT DOOR",
+      "display_name": "Left side door",
+      "bbox": [
+        0.3799,
+        0.1699,
+        0.6299,
+        0.4097
+      ],
+      "aliases": [
+        "left side door",
+        "left door",
+        "driver door",
+        "driver side door"
+      ],
+      "in_game_hint": "Upper-middle panel \u2014 driver-side door in the sim.",
+      "label_anchor": [
+        0.5117,
+        0.2754
+      ]
+    },
+    {
+      "id": "rear_quarter_behind_door",
+      "label": "REAR QUARTER",
+      "display_name": "Rear quarter (behind door)",
+      "aliases": [
+        "rear quarter",
+        "rear quarter panel",
+        "quarter panel",
+        "behind door",
+        "behind the door",
+        "sail panel",
+        "c pillar",
+        "c-pillar",
+        "side panel behind door"
+      ],
+      "in_game_hint": "Horizontal panel between the side door and rear corner on the UV sheet.",
+      "label_anchor": [
+        0.38,
+        0.4
+      ],
+      "bbox": [
+        0.2197,
+        0.3398,
+        0.5498,
+        0.46
+      ]
+    },
+    {
+      "id": "front_corner_upper_right",
+      "label": "FRONT CORNER",
+      "display_name": "Front corner (upper right quarter)",
+      "aliases": [
+        "front corner",
+        "front quarter",
+        "right front corner"
+      ],
+      "in_game_hint": "Right-side upper quarter panel \u2014 not part of the bumper row.",
+      "bbox": [
+        0.6196,
+        0.2197,
+        0.8799,
+        0.3999
+      ],
+      "label_anchor": [
+        0.7319,
+        0.31
+      ]
+    },
+    {
+      "id": "rear_corner_upper",
+      "label": "REAR CORNER",
+      "display_name": "Rear corner (upper left)",
+      "bbox": [
+        0.0,
+        0.2798,
+        0.2598,
+        0.4697
+      ],
+      "aliases": [
+        "rear corner",
+        "rear quarter",
+        "left rear corner"
+      ],
+      "in_game_hint": "Left-middle panel above the trunk \u2014 rear quarter area.",
+      "label_anchor": [
+        0.1274,
+        0.37
+      ]
+    },
+    {
+      "id": "trunk",
+      "label": "TRUNK",
+      "display_name": "Trunk / rear deck",
+      "bbox": [
+        0.0,
+        0.4697,
+        0.2695,
+        0.7197
+      ],
+      "aliases": [
+        "trunk",
+        "rear deck",
+        "deck lid",
+        "tail"
+      ],
+      "in_game_hint": "Lower-left vertical panel \u2014 trunk lid in the sim.",
+      "label_anchor": [
+        0.0542,
+        0.5923
+      ]
+    },
+    {
+      "id": "roof",
+      "label": "ROOF",
+      "display_name": "Roof",
+      "bbox": [
+        0.2397,
+        0.4399,
+        0.5396,
+        0.7197
+      ],
+      "aliases": [
+        "roof",
+        "top"
+      ],
+      "in_game_hint": "Center panel \u2014 roof and upper cabin area.",
+      "label_anchor": [
+        0.4067,
+        0.5835
+      ]
+    },
+    {
+      "id": "hood",
+      "label": "HOOD",
+      "display_name": "Hood",
+      "bbox": [
+        0.6597,
+        0.4097,
+        1.0,
+        0.7397
+      ],
+      "aliases": [
+        "hood",
+        "bonnet"
+      ],
+      "in_game_hint": "Right-middle large panel \u2014 hood in the sim.",
+      "label_anchor": [
+        0.8657,
+        0.5996
+      ]
+    },
+    {
+      "id": "right_side_door",
+      "label": "RIGHT DOOR",
+      "display_name": "Right side door",
+      "bbox": [
+        0.3799,
+        0.7397,
+        0.6597,
+        1.0
+      ],
+      "aliases": [
+        "right side door",
+        "right door",
+        "passenger door",
+        "passenger side door"
+      ],
+      "in_game_hint": "Bottom-center panel \u2014 passenger-side door in the sim.",
+      "label_anchor": [
+        0.5479,
+        0.8896
+      ]
+    },
+    {
+      "id": "front_corner_lower_right",
+      "label": "FRONT CORNER",
+      "display_name": "Front corner (lower right quarter)",
+      "aliases": [
+        "front corner lower",
+        "right front lower"
+      ],
+      "in_game_hint": "Right-side lower quarter panel on the UV sheet.",
+      "bbox": [
+        0.6196,
+        0.7598,
+        0.8999,
+        0.9199
+      ],
+      "label_anchor": [
+        0.7227,
+        0.84
+      ]
+    },
+    {
+      "id": "rear_corner_lower",
+      "label": "REAR CORNER",
+      "display_name": "Rear corner (lower left)",
+      "bbox": [
+        0.0,
+        0.7598,
+        0.2798,
+        0.9399
+      ],
+      "aliases": [
+        "rear corner lower",
+        "left rear lower"
+      ],
+      "in_game_hint": "Bottom-left panel below the trunk \u2014 lower rear quarter.",
+      "label_anchor": [
+        0.1221,
+        0.85
+      ]
+    }
+  ]
+}

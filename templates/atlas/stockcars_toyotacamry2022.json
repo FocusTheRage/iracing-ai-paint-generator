@@ -1,0 +1,449 @@
+{
+  "car_name": "NASCAR Cup Next Gen Toyota Camry",
+  "folder_path": "stockcars\\toyotacamry2022",
+  "resolution": 2048,
+  "version": 4,
+  "reference_png": "",
+  "layout_lines": [
+    "TOP ROW = B CORNER LEFT + FRONT BUMPER + B CORNER RIGHT + REAR + REAR DIFFUSER",
+    "UPPER BODY = FRONT L QUARTER above plan view",
+    "PLAN VIEW = LEFT DOOR (center-top), TRUNK (left), ROOF (center), HOOD (right)",
+    "MID BODY = REAR QUARTER (left), RIGHT DOOR (center), FRONT R QUARTER (right)",
+    "LOWER BODY = PIT SIGN (left), RIGHT LOWER DOOR (center)",
+    "BOTTOM = FRONT SPLITTER strip"
+  ],
+  "alias_groups": {
+    "rear": [
+      "back",
+      "rear_diffuser",
+      "trunk",
+      "rear_corner_lower"
+    ],
+    "back": [
+      "back"
+    ],
+    "front": [
+      "front_bumper",
+      "front_corner_upper_left",
+      "front_corner_upper_bumper_right",
+      "front_corner_upper_right",
+      "front_corner_lower_right",
+      "front_splitter_right"
+    ],
+    "hood": [
+      "hood"
+    ],
+    "roof": [
+      "roof"
+    ],
+    "trunk": [
+      "trunk"
+    ],
+    "driver_side": [
+      "left_side_door",
+      "pit_sign"
+    ],
+    "passenger_side": [
+      "right_side_door",
+      "right_lower_door"
+    ],
+    "left_side": [
+      "left_side_door",
+      "rear_corner_lower",
+      "trunk",
+      "pit_sign"
+    ],
+    "right_side": [
+      "right_side_door",
+      "right_lower_door",
+      "hood",
+      "front_corner_upper_bumper_right",
+      "front_corner_upper_right",
+      "front_corner_lower_right",
+      "front_splitter_right"
+    ],
+    "door": [
+      "left_side_door",
+      "right_side_door",
+      "right_lower_door"
+    ],
+    "bumper": [
+      "front_bumper",
+      "front_corner_upper_left",
+      "front_corner_upper_bumper_right"
+    ],
+    "corner": [
+      "rear_corner_lower",
+      "front_corner_upper_right",
+      "front_corner_lower_right"
+    ],
+    "fender": [
+      "rear_corner_lower",
+      "front_corner_upper_right",
+      "front_corner_lower_right"
+    ],
+    "diffuser": [
+      "rear_diffuser"
+    ],
+    "rear_quarter": [
+      "rear_corner_lower"
+    ],
+    "quarter": [
+      "rear_corner_lower",
+      "front_corner_upper_right",
+      "front_corner_lower_right"
+    ],
+    "front_bumper_corner": [
+      "front_corner_upper_left",
+      "front_corner_upper_bumper_right"
+    ],
+    "pit_sign": [
+      "pit_sign"
+    ]
+  },
+  "regions": [
+    {
+      "id": "front_corner_upper_left",
+      "label": "B CORNER LEFT",
+      "display_name": "Bumper corner (left)",
+      "aliases": [
+        "bumper corner left",
+        "b corner left",
+        "front bumper corner left"
+      ],
+      "in_game_hint": "Top-left bumper corner cap.",
+      "bbox": [
+        0.0,
+        0.0,
+        0.2397,
+        0.25
+      ],
+      "label_anchor": [
+        0.067,
+        0.118
+      ]
+    },
+    {
+      "id": "front_bumper",
+      "label": "FRONT BUMPER",
+      "display_name": "Front bumper",
+      "aliases": [
+        "front bumper",
+        "front",
+        "nose",
+        "grille"
+      ],
+      "in_game_hint": "Top-row front bumper fascia.",
+      "bbox": [
+        0.1499,
+        0.0298,
+        0.5498,
+        0.1997
+      ],
+      "label_anchor": [
+        0.253,
+        0.065
+      ]
+    },
+    {
+      "id": "front_corner_upper_bumper_right",
+      "label": "B CORNER RIGHT",
+      "display_name": "Bumper corner (right)",
+      "aliases": [
+        "bumper corner right",
+        "b corner right",
+        "front bumper corner right"
+      ],
+      "in_game_hint": "Top-center/right bumper corner cap.",
+      "bbox": [
+        0.25,
+        0.0,
+        0.5996,
+        0.25
+      ],
+      "label_anchor": [
+        0.426,
+        0.114
+      ]
+    },
+    {
+      "id": "back",
+      "label": "REAR",
+      "display_name": "Rear body",
+      "aliases": [
+        "back",
+        "rear",
+        "rear body",
+        "rear clip"
+      ],
+      "in_game_hint": "Top-right rear body panel.",
+      "bbox": [
+        0.5498,
+        0.0,
+        0.8799,
+        0.1997
+      ],
+      "label_anchor": [
+        0.682,
+        0.087
+      ]
+    },
+    {
+      "id": "rear_diffuser",
+      "label": "REAR DIFFUSER",
+      "display_name": "Rear diffuser",
+      "aliases": [
+        "rear diffuser",
+        "diffuser"
+      ],
+      "in_game_hint": "Top-right rear diffuser stack.",
+      "bbox": [
+        0.8599,
+        0.0498,
+        1.0,
+        0.3496
+      ],
+      "label_anchor": [
+        0.953,
+        0.099
+      ]
+    },
+    {
+      "id": "front_corner_upper_right",
+      "label": "FRONT L QUARTER",
+      "display_name": "Front left quarter",
+      "aliases": [
+        "front left corner",
+        "front left quarter",
+        "front left quarter panel",
+        "left front quarter"
+      ],
+      "in_game_hint": "Upper accent \u2014 front left quarter panel.",
+      "bbox": [
+        0.3398,
+        0.1299,
+        0.6797,
+        0.3096
+      ],
+      "label_anchor": [
+        0.511,
+        0.176
+      ]
+    },
+    {
+      "id": "left_side_door",
+      "label": "LEFT DOOR",
+      "display_name": "Left door",
+      "aliases": [
+        "left door",
+        "left side door",
+        "driver door",
+        "driver side door"
+      ],
+      "in_game_hint": "Center plan view \u2014 driver door.",
+      "bbox": [
+        0.3496,
+        0.2197,
+        0.6499,
+        0.3999
+      ],
+      "label_anchor": [
+        0.5,
+        0.259
+      ]
+    },
+    {
+      "id": "trunk",
+      "label": "TRUNK",
+      "display_name": "Trunk / rear deck",
+      "aliases": [
+        "trunk",
+        "rear deck",
+        "deck lid",
+        "tail"
+      ],
+      "in_game_hint": "Plan view left \u2014 trunk lid.",
+      "bbox": [
+        0.0,
+        0.2397,
+        0.3496,
+        0.48
+      ],
+      "label_anchor": [
+        0.22,
+        0.308
+      ]
+    },
+    {
+      "id": "roof",
+      "label": "ROOF",
+      "display_name": "Roof",
+      "aliases": [
+        "roof",
+        "top",
+        "roof top"
+      ],
+      "in_game_hint": "Plan view center \u2014 roof and greenhouse.",
+      "bbox": [
+        0.2998,
+        0.2397,
+        0.6196,
+        0.48
+      ],
+      "label_anchor": [
+        0.481,
+        0.353
+      ]
+    },
+    {
+      "id": "hood",
+      "label": "HOOD",
+      "display_name": "Hood",
+      "aliases": [
+        "hood",
+        "bonnet"
+      ],
+      "in_game_hint": "Plan view right \u2014 hood.",
+      "bbox": [
+        0.5498,
+        0.2397,
+        1.0,
+        0.48
+      ],
+      "label_anchor": [
+        0.745,
+        0.378
+      ]
+    },
+    {
+      "id": "rear_corner_lower",
+      "label": "REAR QUARTER",
+      "display_name": "Rear quarter",
+      "aliases": [
+        "rear quarter",
+        "rear corner",
+        "right rear corner",
+        "right rear quarter",
+        "rear corner lower"
+      ],
+      "in_game_hint": "Lower-left plan silhouette \u2014 rear quarter panel.",
+      "bbox": [
+        0.0,
+        0.48,
+        0.2197,
+        0.7197
+      ],
+      "label_anchor": [
+        0.131,
+        0.58
+      ]
+    },
+    {
+      "id": "right_side_door",
+      "label": "RIGHT DOOR",
+      "display_name": "Right door",
+      "aliases": [
+        "right door",
+        "right side door",
+        "passenger door",
+        "passenger side door"
+      ],
+      "in_game_hint": "Center-lower plan view \u2014 passenger door.",
+      "bbox": [
+        0.3496,
+        0.3999,
+        0.6499,
+        0.5796
+      ],
+      "label_anchor": [
+        0.5,
+        0.59
+      ]
+    },
+    {
+      "id": "front_corner_lower_right",
+      "label": "FRONT R QUARTER",
+      "display_name": "Front right quarter",
+      "aliases": [
+        "front right corner",
+        "front right quarter",
+        "right front corner",
+        "right front quarter"
+      ],
+      "in_game_hint": "Lower-right plan silhouette \u2014 front right quarter.",
+      "bbox": [
+        0.5195,
+        0.48,
+        0.7197,
+        0.7197
+      ],
+      "label_anchor": [
+        0.601,
+        0.628
+      ]
+    },
+    {
+      "id": "pit_sign",
+      "label": "PIT SIGN",
+      "display_name": "Pit sign area",
+      "aliases": [
+        "pit sign",
+        "pit box sign",
+        "windshield banner"
+      ],
+      "in_game_hint": "Lower-left pit sign / banner panel.",
+      "bbox": [
+        0.0,
+        0.7197,
+        0.2998,
+        0.8799
+      ],
+      "label_anchor": [
+        0.158,
+        0.812
+      ]
+    },
+    {
+      "id": "right_lower_door",
+      "label": "RIGHT LOWER DOOR",
+      "display_name": "Right lower door",
+      "aliases": [
+        "right lower door",
+        "lower right door",
+        "passenger lower door"
+      ],
+      "in_game_hint": "Bottom-center lower door / rocker area.",
+      "bbox": [
+        0.2998,
+        0.7197,
+        0.6499,
+        0.8799
+      ],
+      "label_anchor": [
+        0.479,
+        0.839
+      ]
+    },
+    {
+      "id": "front_splitter_right",
+      "label": "FRONT SPLITTER",
+      "display_name": "Front splitter",
+      "aliases": [
+        "front splitter",
+        "splitter",
+        "front lip"
+      ],
+      "in_game_hint": "Bottom strip \u2014 front splitter / lip.",
+      "bbox": [
+        0.2998,
+        0.8799,
+        0.75,
+        1.0
+      ],
+      "label_anchor": [
+        0.472,
+        0.934
+      ]
+    }
+  ]
+}
