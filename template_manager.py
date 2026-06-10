@@ -37,7 +37,7 @@ TEMPLATE_BASE = (
 )
 CACHE_DIR = Path(__file__).parent / "templates" / "cache"
 # Bump when mask/wire extraction logic changes (invalidates stale cache).
-CACHE_VERSION = 26
+CACHE_VERSION = 27
 
 def _load_template_zip_map() -> dict[str, str]:
     from car_catalog import template_zip_by_folder
@@ -137,6 +137,45 @@ def _mask_from_layer(image: Image.Image) -> Image.Image:
 
     binary = np.where(paintable, 255, 0).astype(np.uint8)
     return Image.fromarray(binary, mode="L")
+
+
+def _mask_coverage(mask: Image.Image) -> float:
+    """Fraction of canvas marked paintable (0.0–1.0)."""
+    arr = np.array(mask.convert("L"), dtype=np.uint8)
+    return float((arr > 128).mean())
+
+
+def _resolve_paintable_mask(
+    canvas_size: tuple[int, int],
+    mask_raw: Image.Image,
+    paintable_ref_raw: Image.Image | None,
+) -> Image.Image:
+    """
+    Build the best paintable mask from PSD layers.
+
+    Some older templates (e.g. Gen-6 Camaro ZL1) ship a Mask layer that only
+    contains gray body panels (~28% coverage) while the Paintable Area layer
+    includes the full UV islands (~93%). Prefer the richer source when the
+    primary mask is clearly incomplete.
+    """
+    primary = _mask_from_layer(_align_layer(canvas_size, mask_raw))
+    primary_cov = _mask_coverage(primary)
+
+    if paintable_ref_raw is None or primary_cov >= 0.50:
+        return primary
+
+    reference = _mask_from_layer(_align_layer(canvas_size, paintable_ref_raw))
+    reference_cov = _mask_coverage(reference)
+
+    if reference_cov > primary_cov + 0.15:
+        logger.warning(
+            "Mask layer only %.1f%% paintable — using Paintable Area (%.1f%%)",
+            primary_cov * 100,
+            reference_cov * 100,
+        )
+        return reference
+
+    return primary
 
 
 def _mask_outline_overlay(mask: Image.Image, size: tuple[int, int]) -> Image.Image:
@@ -411,7 +450,9 @@ def _extract_template(car: IRacingCar, zip_name: str) -> CarTemplate:
     paintable_ref_raw = _find_layer(psd, REFERENCE_LAYER_NAMES)
 
     canvas_size = (car.resolution, car.resolution)
-    paintable_mask = _mask_from_layer(_align_layer(canvas_size, mask_raw))
+    paintable_mask = _resolve_paintable_mask(
+        canvas_size, mask_raw, paintable_ref_raw
+    )
     wire = _mask_outline_overlay(paintable_mask, canvas_size)
 
     paintable_reference = None
