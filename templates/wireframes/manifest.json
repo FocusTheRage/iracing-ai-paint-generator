@@ -409,9 +409,9 @@
       "slug": "stockcars_camarozl12018",
       "category": "Oval",
       "status": "ok",
-      "mask_coverage_pct": 28.0,
-      "has_atlas": false,
-      "atlas_regions": 0,
+      "mask_coverage_pct": 93.2,
+      "has_atlas": true,
+      "atlas_regions": 16,
       "wireframe": "templates/wireframes/stockcars_camarozl12018/wireframe.png",
       "cache_dir": "templates/cache/stockcars_camarozl12018",
       "source_zip": "103_template_ZL1.zip"

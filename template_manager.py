@@ -36,8 +36,10 @@ TEMPLATE_BASE = (
     "https://ir-core-sites.iracing.com/members/member_images/cars/car_templates/"
 )
 CACHE_DIR = Path(__file__).parent / "templates" / "cache"
+WIREFRAMES_DIR = Path(__file__).parent / "templates" / "wireframes"
+_ATLAS_DIR = Path(__file__).parent / "templates" / "atlas"
 # Bump when mask/wire extraction logic changes (invalidates stale cache).
-CACHE_VERSION = 27
+CACHE_VERSION = 29
 
 def _load_template_zip_map() -> dict[str, str]:
     from car_catalog import template_zip_by_folder
@@ -176,6 +178,60 @@ def _resolve_paintable_mask(
         return reference
 
     return primary
+
+
+def bundled_wireframe_path(car: IRacingCar) -> Path | None:
+    """User-authored labeled wireframe for a car, if shipped in templates/wireframes/."""
+    path = WIREFRAMES_DIR / _safe_slug(car.folder_path) / "wireframe.png"
+    return path if path.exists() else None
+
+
+def cyan_wire_overlay_from_image(
+    source: Path | Image.Image,
+    size: tuple[int, int],
+) -> Image.Image:
+    """Extract cyan wireframe lines from a labeled wireframe PNG."""
+    if isinstance(source, Path):
+        img = Image.open(source).convert("RGBA")
+    else:
+        img = source.convert("RGBA")
+    if img.size != size:
+        img = img.resize(size, Image.Resampling.LANCZOS)
+    arr = np.array(img.convert("RGB"))
+    cyan = (arr[:, :, 2] > 150) & (arr[:, :, 1] > 100) & (arr[:, :, 0] < 120)
+    overlay = Image.new("RGBA", size, (0, 0, 0, 0))
+    color = Image.new("RGBA", size, (60, 220, 255, 200))
+    overlay.paste(color, mask=Image.fromarray((cyan.astype(np.uint8) * 255)))
+    return overlay
+
+
+def resolve_wire_overlay(
+    paintable_mask: Image.Image,
+    size: tuple[int, int],
+    *,
+    car: IRacingCar | None = None,
+    folder_path: str | None = None,
+    atlas_reference: str | None = None,
+) -> Image.Image:
+    """Prefer bundled/reference wireframes over mask-edge outlines."""
+    candidates: list[Path] = []
+    if car is not None:
+        bundled = bundled_wireframe_path(car)
+        if bundled is not None:
+            candidates.append(bundled)
+    elif folder_path:
+        bundled = WIREFRAMES_DIR / _safe_slug(folder_path) / "wireframe.png"
+        if bundled.exists():
+            candidates.append(bundled)
+    if atlas_reference:
+        ref = _ATLAS_DIR / atlas_reference
+        if ref.exists():
+            candidates.append(ref)
+    for path in candidates:
+        overlay = cyan_wire_overlay_from_image(path, size)
+        if np.array(overlay.split()[3]).max() > 8:
+            return overlay
+    return _mask_outline_overlay(paintable_mask, size)
 
 
 def _mask_outline_overlay(mask: Image.Image, size: tuple[int, int]) -> Image.Image:
@@ -453,13 +509,19 @@ def _extract_template(car: IRacingCar, zip_name: str) -> CarTemplate:
     paintable_mask = _resolve_paintable_mask(
         canvas_size, mask_raw, paintable_ref_raw
     )
-    wire = _mask_outline_overlay(paintable_mask, canvas_size)
+
+    uv_atlas = load_atlas_for_car(car.folder_path)
+    wire = resolve_wire_overlay(
+        paintable_mask,
+        canvas_size,
+        car=car,
+        atlas_reference=uv_atlas.reference_png if uv_atlas else None,
+    )
 
     paintable_reference = None
     if paintable_ref_raw is not None:
         paintable_reference = _align_layer(canvas_size, paintable_ref_raw)
 
-    uv_atlas = load_atlas_for_car(car.folder_path)
     if uv_atlas is not None:
         panel_regions = sync_atlas_panel_regions(uv_atlas)
     else:

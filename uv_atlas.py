@@ -310,6 +310,21 @@ def _draw_region_labels(draw: ImageDraw.ImageDraw, atlas: CarUVAtlas, size: int)
         draw.text((lx + pad, ly + pad), tag, fill=(20, 18, 8, 255), font=label_font)
 
 
+def _guide_wire_overlay(
+    paintable_mask: Image.Image,
+    atlas: Optional[CarUVAtlas],
+    size: int,
+) -> Image.Image:
+    from template_manager import resolve_wire_overlay
+
+    return resolve_wire_overlay(
+        paintable_mask,
+        (size, size),
+        folder_path=atlas.folder_path if atlas else None,
+        atlas_reference=atlas.reference_png if atlas else None,
+    )
+
+
 def build_ai_layout_guide(
     paintable_mask: Image.Image,
     atlas: CarUVAtlas,
@@ -319,8 +334,6 @@ def build_ai_layout_guide(
     Reference image sent to the AI: full labeled UV map with cyan wireframe.
     No sponsor decals or title text — only layout cues the model must follow.
     """
-    from template_manager import _mask_outline_overlay
-
     guide = Image.new("RGBA", (size, size), (0, 0, 0, 255))
     mask_l = paintable_mask.convert("L").resize((size, size), Image.Resampling.LANCZOS)
 
@@ -328,17 +341,7 @@ def build_ai_layout_guide(
     panels.paste(Image.new("RGBA", (size, size), (48, 50, 55, 255)), mask=mask_l)
     guide = Image.alpha_composite(guide, panels)
 
-    if atlas.reference_png:
-        ref_path = ATLAS_DIR / atlas.reference_png
-        if ref_path.exists():
-            ref = np.array(Image.open(ref_path).convert("RGB").resize((size, size)))
-            white = (ref[:, :, 0] > 245) & (ref[:, :, 1] > 245) & (ref[:, :, 2] > 245)
-            hint = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-            hint_arr = np.array(hint)
-            hint_arr[white] = [210, 210, 220, 70]
-            guide = Image.alpha_composite(guide, Image.fromarray(hint_arr, mode="RGBA"))
-
-    guide = Image.alpha_composite(guide, _mask_outline_overlay(mask_l, (size, size)))
+    guide = Image.alpha_composite(guide, _guide_wire_overlay(paintable_mask, atlas, size))
     draw = ImageDraw.Draw(guide)
     _draw_region_labels(draw, atlas, size)
     return guide
@@ -352,10 +355,7 @@ def build_ai_generation_guide(
     """
     Reference image sent to the AI: cyan wireframe + gray panels only.
     No yellow labels, red zone boxes, or text — prevents the model copying guides.
-    Atlas is optional (unused here) — same wire+panel guide for every car.
     """
-    from template_manager import _mask_outline_overlay
-
     guide = Image.new("RGBA", (size, size), (0, 0, 0, 255))
     mask_l = paintable_mask.convert("L").resize((size, size), Image.Resampling.LANCZOS)
 
@@ -363,7 +363,7 @@ def build_ai_generation_guide(
     panels.paste(Image.new("RGBA", (size, size), (48, 50, 55, 255)), mask=mask_l)
     guide = Image.alpha_composite(guide, panels)
 
-    guide = Image.alpha_composite(guide, _mask_outline_overlay(mask_l, (size, size)))
+    guide = Image.alpha_composite(guide, _guide_wire_overlay(paintable_mask, atlas, size))
     return guide
 
 
@@ -470,7 +470,7 @@ def build_labeled_guide(
         pa_arr[:, :, 3] = np.clip(pa_arr[:, :, 3] * 0.18, 0, 60).astype(np.uint8)
         guide = Image.alpha_composite(guide, Image.fromarray(pa_arr, mode="RGBA"))
 
-    guide = Image.alpha_composite(guide, _mask_outline_overlay(mask_l, (size, size)))
+    guide = Image.alpha_composite(guide, _guide_wire_overlay(paintable_mask, atlas, size))
 
     draw = ImageDraw.Draw(guide)
     title_font = _load_font(22)
